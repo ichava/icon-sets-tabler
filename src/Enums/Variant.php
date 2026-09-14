@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Simtabi\Laranail\Ichava\TablerIcons\Enums;
 
+use Simtabi\Laranail\Ichava\Traits\HasIconSetVariants;
 use Simtabi\Laranail\Ichava\Contracts\IconSetVariantInterface;
 use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
-use Simtabi\Laranail\Ichava\Traits\HasIconSetVariants;
 
 /**
  * Type-safe variant selection for Tabler Icons (outline / filled).
@@ -23,12 +23,12 @@ enum Variant: string implements IconSetVariantInterface
         return IconsConstants::getSvgPath($this->value);
     }
 
-    protected static function getDefaultValue(): string
+    private static function getDefaultValue(): string
     {
         return IconsConstants::getDefaultVariant() ?? self::OUTLINE->value;
     }
 
-    protected static function getClassPrefix(): string
+    private static function getClassPrefix(): string
     {
         return IconsConstants::getPrefix();
     }

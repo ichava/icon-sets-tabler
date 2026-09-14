@@ -26,8 +26,8 @@ class IconComponent extends BaseIconComponent
     protected function getDefaultAttributes(): array
     {
         return [
-            'stroke-width' => '2',
-            'stroke-linecap' => 'round',
+            'stroke-width'    => '2',
+            'stroke-linecap'  => 'round',
             'stroke-linejoin' => 'round',
         ];
     }

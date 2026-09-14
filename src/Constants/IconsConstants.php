@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Simtabi\Laranail\Ichava\TablerIcons\Constants;
 
-use Simtabi\Laranail\Ichava\Constants\JsonConfigConstants;
 use Simtabi\Laranail\Ichava\Support\PathResolver;
+use Simtabi\Laranail\Ichava\Constants\JsonConfigConstants;
 
 /**
  * Resolves Tabler Icons metadata from its `resources/assets/svg/config.json`.
