@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Simtabi\Laranail\Ichava\TablerIcons\Tests\Feature;
 
 use Simtabi\Laranail\Ichava\Services\IconRegistry;
-use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
 use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
-use Simtabi\Laranail\Ichava\TablerIcons\Providers\IconsServiceProvider;
 use Simtabi\Laranail\Ichava\TablerIcons\Tests\TestCase;
+use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
+use Simtabi\Laranail\Ichava\TablerIcons\Providers\IconsServiceProvider;
 
 class IconsTest extends TestCase
 {
@@ -18,7 +18,7 @@ class IconsTest extends TestCase
 
         $this->assertContains(
             IconsServiceProvider::class,
-            $providers
+            $providers,
         );
     }
 
@@ -52,7 +52,7 @@ class IconsTest extends TestCase
 
         $this->assertTrue(
             $registry->isRegistered('ichava/tabler-icons'),
-            'IconRegistry should have ichava/tabler-icons registered after boot.'
+            'IconRegistry should have ichava/tabler-icons registered after boot.',
         );
     }
 }
