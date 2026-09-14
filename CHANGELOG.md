@@ -4,9 +4,14 @@ All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://k
 
 ## [0.2.0] - Unreleased
 
+### Added
+
+- PHPStan static analysis (level 0) with `composer analyse` and a code-quality CI workflow.
+
 ### Changed
 
 - Hardened CI workflows: concurrency groups, job timeouts, problem matchers, docs-only skip paths, test coverage, and tidy composer scripts.
+- Aligned Pest to `^4.6 || ^5.0`, PHPUnit strict flags, and CI branch triggers on `main` only.
 
 ## [0.1.0] - 2026-08-31
 
