@@ -12,6 +12,7 @@ All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://k
 
 - Hardened CI workflows: concurrency groups, job timeouts, problem matchers, docs-only skip paths, test coverage, and tidy composer scripts.
 - Aligned Pest to `^4.6 || ^5.0`, PHPUnit strict flags, and CI branch triggers on `main` only.
+- Install command requires only the pack. `ichava/core` installs as a dependency.
 
 ### Fixed
 
