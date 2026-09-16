@@ -27,20 +27,20 @@ For the visual icon browser, also install [`ichava/browser`](https://github.com/
 Blade component:
 
 ```blade
-<x-ichava::icon name="ichava/tabler-icons::home" class="w-6 h-6" />
+<x-ichava::icon name="ichava/tabler-icons::outline/home" class="w-6 h-6" />
 <x-ichava::icon name="ichava/tabler-icons::filled/heart" class="w-6 h-6 text-red-500" />
 ```
 
 Fluent helper:
 
 ```blade
-{{ ichava('ichava/tabler-icons::home')->color('#4338ca')->class('w-6 h-6') }}
+{{ ichava('ichava/tabler-icons::outline/home')->color('#4338ca')->class('w-6 h-6') }}
 ```
 
 Custom stroke width (outline variant only):
 
 ```blade
-<x-ichava::icon name="ichava/tabler-icons::home" stroke-width="1.5" class="w-6 h-6" />
+<x-ichava::icon name="ichava/tabler-icons::outline/home" stroke-width="1.5" class="w-6 h-6" />
 ```
 
 ## Pack-specific docs

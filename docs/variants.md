@@ -8,16 +8,15 @@ Tabler ships two variants. The Ichava integration treats them as separate icon "
 
 | Variant | Path prefix | Style |
 |---|---|---|
-| `outline` | `outline/<name>` (or just `<name>`, the default) | 2-px stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"` |
+| `outline` | `outline/<name>` | 2-px stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"` |
 | `filled` | `filled/<name>` | `currentColor` fill, no stroke |
 
-The default variant is `outline`. Bare `ichava/tabler-icons::home` resolves to the outline icon.
+The default variant is `outline`. Always include the variant prefix in the icon path: `ichava/tabler-icons::outline/home` for outline, `ichava/tabler-icons::filled/home` for filled.
 
 ## Examples
 
 ```blade
-{{-- Outline (default) --}}
-<x-ichava::icon name="ichava/tabler-icons::home" class="w-6 h-6" />
+{{-- Outline --}}
 <x-ichava::icon name="ichava/tabler-icons::outline/home" class="w-6 h-6" />
 
 {{-- Filled --}}
