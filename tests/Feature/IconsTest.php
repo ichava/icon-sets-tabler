@@ -2,57 +2,39 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\Tests\Feature;
-
 use Simtabi\Laranail\Ichava\Services\IconRegistry;
 use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
-use Simtabi\Laranail\Ichava\TablerIcons\Tests\TestCase;
 use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
 use Simtabi\Laranail\Ichava\TablerIcons\Providers\IconsServiceProvider;
 
-class IconsTest extends TestCase
-{
-    public function test_provider_boots_without_error(): void
-    {
-        $providers = array_keys($this->app->getLoadedProviders());
+it('boots the provider without error', function () {
+    $providers = array_keys($this->app->getLoadedProviders());
 
-        $this->assertContains(
-            IconsServiceProvider::class,
-            $providers,
-        );
-    }
+    expect($providers)->toContain(IconsServiceProvider::class);
+});
 
-    public function test_constants_resolve_from_config_json(): void
-    {
-        $this->assertSame('ichava/tabler-icons', IconsConstants::getVendorPackage());
-        $this->assertSame('Tabler Icons', IconsConstants::getTitle());
-        $this->assertSame('ti', IconsConstants::getPrefix());
-        $this->assertSame('outline', IconsConstants::getDefaultVariant());
-    }
+it('resolves constants from config json', function () {
+    expect(IconsConstants::getVendorPackage())->toBe('ichava/tabler-icons')
+        ->and(IconsConstants::getTitle())->toBe('Tabler Icons')
+        ->and(IconsConstants::getPrefix())->toBe('ti')
+        ->and(IconsConstants::getDefaultVariant())->toBe('outline');
+});
 
-    public function test_enum_class_helpers_use_config_prefix(): void
-    {
-        $this->assertSame('ti-outline', Variant::OUTLINE->getClass());
-        $this->assertSame('ti-filled', Variant::FILLED->getClass());
-    }
+it('uses the config prefix in enum class helpers', function () {
+    expect(Variant::OUTLINE->getClass())->toBe('ti-outline')
+        ->and(Variant::FILLED->getClass())->toBe('ti-filled');
+});
 
-    public function test_default_variant_matches_config_json(): void
-    {
-        $default = Variant::default();
+it('matches the default variant to config json', function () {
+    expect(Variant::default())->toBe(Variant::OUTLINE)
+        ->and(Variant::OUTLINE->isDefault())->toBeTrue()
+        ->and(Variant::FILLED->isDefault())->toBeFalse();
+});
 
-        $this->assertSame(Variant::OUTLINE, $default);
-        $this->assertTrue(Variant::OUTLINE->isDefault());
-        $this->assertFalse(Variant::FILLED->isDefault());
-    }
+it('picks up the package in the icon registry', function () {
+    $registry = $this->app->make(IconRegistry::class);
 
-    public function test_icon_registry_picks_up_the_package(): void
-    {
-        /** @var IconRegistry $registry */
-        $registry = $this->app->make(IconRegistry::class);
-
-        $this->assertTrue(
-            $registry->isRegistered('ichava/tabler-icons'),
-            'IconRegistry should have ichava/tabler-icons registered after boot.',
-        );
-    }
-}
+    expect($registry->isRegistered('ichava/tabler-icons'))->toBeTrue(
+        'IconRegistry should have ichava/tabler-icons registered after boot.',
+    );
+});

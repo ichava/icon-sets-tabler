@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\Tests\Unit;
-
-use PHPUnit\Framework\TestCase;
 use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
 
 /**
@@ -12,30 +9,20 @@ use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
  * isDefault(), getClass(), getPath()) lives in the Feature suite where the
  * Laravel container is bootstrapped.
  */
-class VariantTest extends TestCase
-{
-    public function test_outline_case_value(): void
-    {
-        $this->assertSame('outline', Variant::OUTLINE->getValue());
-    }
+it('exposes the outline case value', function () {
+    expect(Variant::OUTLINE->getValue())->toBe('outline');
+});
 
-    public function test_filled_case_value(): void
-    {
-        $this->assertSame('filled', Variant::FILLED->getValue());
-    }
+it('exposes the filled case value', function () {
+    expect(Variant::FILLED->getValue())->toBe('filled');
+});
 
-    public function test_values_returns_every_case(): void
-    {
-        $values = Variant::values();
+it('returns every case from values', function () {
+    expect(Variant::values())->toBe(['outline', 'filled']);
+});
 
-        $this->assertCount(2, $values);
-        $this->assertSame(['outline', 'filled'], $values);
-    }
-
-    public function test_try_from_value_resolves_known_and_rejects_unknown(): void
-    {
-        $this->assertSame(Variant::OUTLINE, Variant::tryFromValue('outline'));
-        $this->assertSame(Variant::FILLED, Variant::tryFromValue('filled'));
-        $this->assertNull(Variant::tryFromValue('not-a-real-variant'));
-    }
-}
+it('resolves known values and rejects unknown ones', function () {
+    expect(Variant::tryFromValue('outline'))->toBe(Variant::OUTLINE)
+        ->and(Variant::tryFromValue('filled'))->toBe(Variant::FILLED)
+        ->and(Variant::tryFromValue('not-a-real-variant'))->toBeNull();
+});
