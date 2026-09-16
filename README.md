@@ -11,7 +11,7 @@
 ## Install
 
 ```bash
-composer require ichava/core ichava/tabler-icons
+composer require ichava/tabler-icons
 ```
 
 The provider auto-registers via Laravel package discovery. Seed the icon database:
