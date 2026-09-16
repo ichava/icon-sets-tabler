@@ -13,6 +13,10 @@ All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://k
 - Hardened CI workflows: concurrency groups, job timeouts, problem matchers, docs-only skip paths, test coverage, and tidy composer scripts.
 - Aligned Pest to `^4.6 || ^5.0`, PHPUnit strict flags, and CI branch triggers on `main` only.
 
+### Fixed
+
+- Icon examples now use variant-prefixed paths (`outline/home`, `filled/home`). Bare `ichava/tabler-icons::home` does not resolve.
+
 ## [0.1.0] - 2026-08-31
 
 First open-source release. An icon pack for the Ichava ecosystem: **6,146 SVGs**, registered with
