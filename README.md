@@ -17,7 +17,7 @@ composer require ichava/tabler-icons
 The provider auto-registers via Laravel package discovery. Seed the icon database:
 
 ```bash
-php artisan ichava:database seed --package=ichava/tabler-icons
+php artisan ichava::ichava-core.database seed --package=ichava/tabler-icons
 ```
 
 For the visual icon browser, also install [`ichava/browser`](https://github.com/ichava/browser).
@@ -90,7 +90,7 @@ https://raw.githubusercontent.com/tabler/tabler-icons/v{version}/icons/{variant}
 This pack participates in Ichava's upstream-tracking system. Run
 
 ```bash
-php artisan ichava:icons:check-updates --package=ichava/tabler-icons
+php artisan ichava::ichava-core.check-updates --package=ichava/tabler-icons
 ```
 
 to see whether a newer `@tabler/icons` release exists. The check hits

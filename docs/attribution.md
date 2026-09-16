@@ -33,7 +33,7 @@ Packagist + `composer update` fans the change out.
 
 End users **don't** refresh locally -- `vendor/` is regenerated on every
 `composer install`, so any local change is discarded. Run
-`php artisan ichava:icons:check-updates --package=ichava/tabler-icons`
+`php artisan ichava::ichava-core.check-updates --package=ichava/tabler-icons`
 to see whether a new upstream version is available.
 
 ## See also
