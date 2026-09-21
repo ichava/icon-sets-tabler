@@ -18,5 +18,5 @@ the core package.
 
 ## Reporting issues
 
-Use the [issue tracker](https://github.com/ichava/tabler-icons/issues).
+Use the [issue tracker](https://github.com/ichava/icon-sets-tabler/issues).
 Security issues go to **security@simtabi.com** privately, not the issue tracker.

@@ -11,23 +11,23 @@ Tabler ships two variants. The Ichava integration treats them as separate icon "
 | `outline` | `outline/<name>` | 2-px stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"` |
 | `filled` | `filled/<name>` | `currentColor` fill, no stroke |
 
-The default variant is `outline`. Always include the variant prefix in the icon path: `ichava/tabler-icons::outline/home` for outline, `ichava/tabler-icons::filled/home` for filled.
+The default variant is `outline`. Always include the variant prefix in the icon path: `ichava/icon-sets-tabler::outline/home` for outline, `ichava/icon-sets-tabler::filled/home` for filled.
 
 ## Examples
 
 ```blade
 {{-- Outline --}}
-<x-ichava::icon name="ichava/tabler-icons::outline/home" class="w-6 h-6" />
+<x-ichava::icon name="ichava/icon-sets-tabler::outline/home" class="w-6 h-6" />
 
 {{-- Filled --}}
-<x-ichava::icon name="ichava/tabler-icons::filled/home" class="w-6 h-6" />
-<x-ichava::icon name="ichava/tabler-icons::filled/heart" class="w-6 h-6 text-red-500" />
+<x-ichava::icon name="ichava/icon-sets-tabler::filled/home" class="w-6 h-6" />
+<x-ichava::icon name="ichava/icon-sets-tabler::filled/heart" class="w-6 h-6 text-red-500" />
 ```
 
 ## Variant enum (PHP)
 
 ```php
-use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Enums\Variant;
 
 Variant::OUTLINE->value;            // 'outline'
 Variant::FILLED->value;             // 'filled'

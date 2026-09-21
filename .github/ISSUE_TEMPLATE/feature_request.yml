@@ -1,5 +1,5 @@
 name: Feature request
-description: Propose an improvement to ichava/tabler-icons
+description: Propose an improvement to ichava/icon-sets-tabler
 labels: [enhancement]
 body:
   - type: textarea

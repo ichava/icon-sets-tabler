@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\Enums;
+namespace Simtabi\Laranail\Ichava\IconSetsTabler\Enums;
 
 use Simtabi\Laranail\Ichava\Traits\HasIconSetVariants;
 use Simtabi\Laranail\Ichava\Contracts\IconSetVariantInterface;
-use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Constants\IconsConstants;
 
 /**
  * Type-safe variant selection for Tabler Icons (outline / filled).

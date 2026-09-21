@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\View\Components;
+namespace Simtabi\Laranail\Ichava\IconSetsTabler\View\Components;
 
-use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Constants\IconsConstants;
 use Simtabi\Laranail\Ichava\View\Components\IconComponent as BaseIconComponent;
 
 /**

@@ -1,6 +1,30 @@
 # Changelog
 
-All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and [Semantic Versioning](https://semver.org/).
+All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and [Semantic Versioning](https://semver.org/).
+
+## [0.3.0] - 2026-09-21
+
+### Changed
+
+- **Renamed to `ichava/icon-sets-tabler`.** The composer package, the GitHub repository and the local
+  directory now all read `icon-sets-tabler`, restoring the one-name rule the ecosystem relies on.
+
+  **Breaking, and that is why the minor moves.** A `0.x` caret pins the minor, so `^0.2` will
+  not resolve to `0.3.0` -- consumers move deliberately rather than by accident.
+
+  | Surface | Was | Now |
+  |---|---|---|
+  | Composer package | `ichava/icon-sets-tabler` | `ichava/icon-sets-tabler` |
+  | PHP namespace | `Simtabi\Laranail\Ichava\IconSetsTabler` | `Simtabi\Laranail\Ichava\IconSetsTabler` |
+  | Config file and key | `config/tabler-icons.php` | `config/icon-sets-tabler.php` |
+
+  The config **filename** must match the package short name or the key silently doubles and
+  every `config()` read returns `null` -- the `V39` defect that once left an entire shipped
+  config inert.
+
+  **Upstream references are deliberately untouched.** The vendor this pack tracks shares the
+  token with our old name; a blanket rename would have aimed the update checker at a package
+  that does not exist and broken the CDN templates, failing in a host app rather than in CI.
 
 ## [0.2.6] - 2026-09-21
 
@@ -162,7 +186,7 @@ All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://k
 
 ### Fixed
 
-- Icon examples now use variant-prefixed paths (`outline/home`, `filled/home`). Bare `ichava/tabler-icons::home` does not resolve.
+- Icon examples now use variant-prefixed paths (`outline/home`, `filled/home`). Bare `ichava/icon-sets-tabler::home` does not resolve.
 
 ## [0.1.0] - 2026-08-31
 

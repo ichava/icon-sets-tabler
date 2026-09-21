@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Enums\Variant;
 
 /**
  * Pins the canonical `resources/` shape shared by every Ichava icon pack.
@@ -72,5 +72,5 @@ it(description: 'declares itself as this package in config.json', closure: funct
         flags: JSON_THROW_ON_ERROR,
     );
 
-    expect($config['package']['name'])->toBe('ichava/tabler-icons');
+    expect($config['package']['name'])->toBe('ichava/icon-sets-tabler');
 });

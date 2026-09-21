@@ -1,8 +1,8 @@
 # Tabler Icons for Laravel
 
-[![Latest Version](https://img.shields.io/packagist/v/ichava/tabler-icons.svg)](https://packagist.org/packages/ichava/tabler-icons)
-[![License](https://img.shields.io/packagist/l/ichava/tabler-icons.svg)](LICENSE)
-[![PHP Version](https://img.shields.io/packagist/php-v/ichava/tabler-icons.svg)](https://packagist.org/packages/ichava/tabler-icons)
+[![Latest Version](https://img.shields.io/packagist/v/ichava/icon-sets-tabler.svg)](https://packagist.org/packages/ichava/icon-sets-tabler)
+[![License](https://img.shields.io/packagist/l/ichava/icon-sets-tabler.svg)](LICENSE)
+[![PHP Version](https://img.shields.io/packagist/php-v/ichava/icon-sets-tabler.svg)](https://packagist.org/packages/ichava/icon-sets-tabler)
 
 6,184 free MIT-licensed SVG icons from [Tabler Icons](https://tabler-icons.io) packaged for the [Ichava ecosystem](https://github.com/ichava/documentation). Outline + filled variants. Customisable stroke widths. Auto-updatable from upstream.
 
@@ -11,13 +11,13 @@
 ## Install
 
 ```bash
-composer require ichava/tabler-icons
+composer require ichava/icon-sets-tabler
 ```
 
 The provider auto-registers via Laravel package discovery. Seed the icon database:
 
 ```bash
-php artisan ichava::ichava-core.database seed --package=ichava/tabler-icons
+php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-tabler
 ```
 
 For the visual icon browser, also install [`ichava/browser`](https://github.com/ichava/browser).
@@ -27,20 +27,20 @@ For the visual icon browser, also install [`ichava/browser`](https://github.com/
 Blade component:
 
 ```blade
-<x-ichava::icon name="ichava/tabler-icons::outline/home" class="w-6 h-6" />
-<x-ichava::icon name="ichava/tabler-icons::filled/heart" class="w-6 h-6 text-red-500" />
+<x-ichava::icon name="ichava/icon-sets-tabler::outline/home" class="w-6 h-6" />
+<x-ichava::icon name="ichava/icon-sets-tabler::filled/heart" class="w-6 h-6 text-red-500" />
 ```
 
 Fluent helper:
 
 ```blade
-{{ ichava('ichava/tabler-icons::outline/home')->color('#4338ca')->class('w-6 h-6') }}
+{{ ichava('ichava/icon-sets-tabler::outline/home')->color('#4338ca')->class('w-6 h-6') }}
 ```
 
 Custom stroke width (outline variant only):
 
 ```blade
-<x-ichava::icon name="ichava/tabler-icons::outline/home" stroke-width="1.5" class="w-6 h-6" />
+<x-ichava::icon name="ichava/icon-sets-tabler::outline/home" stroke-width="1.5" class="w-6 h-6" />
 ```
 
 ## Pack-specific docs
@@ -90,7 +90,7 @@ https://raw.githubusercontent.com/tabler/tabler-icons/v{version}/icons/{variant}
 This pack participates in Ichava's upstream-tracking system. Run
 
 ```bash
-php artisan ichava::ichava-core.check-updates --package=ichava/tabler-icons
+php artisan ichava::ichava-core.check-updates --package=ichava/icon-sets-tabler
 ```
 
 to see whether a newer `@tabler/icons` release exists. The check hits

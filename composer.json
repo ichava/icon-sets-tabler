@@ -1,5 +1,5 @@
 {
-    "name": "ichava/tabler-icons",
+    "name": "ichava/icon-sets-tabler",
     "description": "5,900+ Tabler SVG icons for Laravel. Outline + filled variants, customisable stroke widths, MIT-licensed. Built on the Ichava ecosystem.",
     "type": "library",
     "keywords": [
@@ -11,7 +11,7 @@
         "tabler-icons",
         "ichava"
     ],
-    "homepage": "https://opensource.simtabi.com/products/ichava/tabler-icons",
+    "homepage": "https://opensource.simtabi.com/products/ichava/icon-sets-tabler",
     "license": "MIT",
     "authors": [
         {
@@ -53,18 +53,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Simtabi\\Laranail\\Ichava\\TablerIcons\\": "src/"
+            "Simtabi\\Laranail\\Ichava\\IconSetsTabler\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Simtabi\\Laranail\\Ichava\\TablerIcons\\Tests\\": "tests/"
+            "Simtabi\\Laranail\\Ichava\\IconSetsTabler\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Simtabi\\Laranail\\Ichava\\TablerIcons\\Providers\\IconsServiceProvider"
+                "Simtabi\\Laranail\\Ichava\\IconSetsTabler\\Providers\\IconsServiceProvider"
             ]
         },
         "branch-alias": {
@@ -88,9 +88,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "support": {
-        "source": "https://github.com/ichava/tabler-icons",
-        "issues": "https://github.com/ichava/tabler-icons/issues",
-        "security": "https://github.com/ichava/tabler-icons/security/policy",
-        "docs": "https://opensource.simtabi.com/documentation/ichava/tabler-icons/"
+        "source": "https://github.com/ichava/icon-sets-tabler",
+        "issues": "https://github.com/ichava/icon-sets-tabler/issues",
+        "security": "https://github.com/ichava/icon-sets-tabler/security/policy",
+        "docs": "https://opensource.simtabi.com/documentation/ichava/icon-sets-tabler/"
     }
 }

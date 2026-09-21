@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Enums\Variant;
 
 /**
  * Pure-enum behaviour tests. Anything that touches config.json (default(),
