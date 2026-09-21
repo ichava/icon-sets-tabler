@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "package": {
-    "name": "ichava/tabler-icons",
+    "name": "ichava/icon-sets-tabler",
     "title": "Tabler Icons",
     "description": "Over 5,200 pixel-perfect icons for web apps. Free and open source icons designed with attention to detail to make your design stand out.",
     "keywords": [

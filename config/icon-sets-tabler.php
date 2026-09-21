@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Constants\IconsConstants;
 
 /**
  * Tabler Icons configuration.

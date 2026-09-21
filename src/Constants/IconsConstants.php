@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\Constants;
+namespace Simtabi\Laranail\Ichava\IconSetsTabler\Constants;
 
 use Simtabi\Laranail\Ichava\Support\PathResolver;
 use Simtabi\Laranail\Ichava\Constants\JsonConfigConstants;

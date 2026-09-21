@@ -16,7 +16,7 @@ declare(strict_types=1);
 | loads this file. A non-English locale may add them to override; `en` must
 | not.
 |
-| Variant keys match Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant.
+| Variant keys match Simtabi\Laranail\Ichava\IconSetsTabler\Enums\Variant.
 |
 */
 

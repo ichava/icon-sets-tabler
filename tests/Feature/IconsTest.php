@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Simtabi\Laranail\Ichava\Services\IconRegistry;
-use Simtabi\Laranail\Ichava\TablerIcons\Enums\Variant;
-use Simtabi\Laranail\Ichava\TablerIcons\Constants\IconsConstants;
-use Simtabi\Laranail\Ichava\TablerIcons\Providers\IconsServiceProvider;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Enums\Variant;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Constants\IconsConstants;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Providers\IconsServiceProvider;
 
 it(description: 'boots the provider without error', closure: function () {
     $providers = array_keys($this->app->getLoadedProviders());
@@ -14,7 +14,7 @@ it(description: 'boots the provider without error', closure: function () {
 });
 
 it(description: 'resolves constants from config json', closure: function () {
-    expect(IconsConstants::getVendorPackage())->toBe('ichava/tabler-icons')
+    expect(IconsConstants::getVendorPackage())->toBe('ichava/icon-sets-tabler')
         ->and(IconsConstants::getTitle())->toBe('Tabler Icons')
         ->and(IconsConstants::getPrefix())->toBe('ti')
         ->and(IconsConstants::getDefaultVariant())->toBe('outline');
@@ -34,7 +34,7 @@ it(description: 'matches the default variant to config json', closure: function 
 it(description: 'picks up the package in the icon registry', closure: function () {
     $registry = $this->app->make(IconRegistry::class);
 
-    expect($registry->isRegistered('ichava/tabler-icons'))->toBeTrue(
-        'IconRegistry should have ichava/tabler-icons registered after boot.',
+    expect($registry->isRegistered('ichava/icon-sets-tabler'))->toBeTrue(
+        'IconRegistry should have ichava/icon-sets-tabler registered after boot.',
     );
 });

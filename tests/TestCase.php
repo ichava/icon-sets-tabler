@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\TablerIcons\Tests;
+namespace Simtabi\Laranail\Ichava\IconSetsTabler\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 use Simtabi\Laranail\Ichava\Providers\IchavaServiceProvider;
-use Simtabi\Laranail\Ichava\TablerIcons\Providers\IconsServiceProvider;
+use Simtabi\Laranail\Ichava\IconSetsTabler\Providers\IconsServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
