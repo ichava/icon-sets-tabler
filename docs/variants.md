@@ -47,4 +47,8 @@ Many icons exist in both variants; not all do. Check the [Tabler website](https:
 ## See also
 
 - [Customisation](customization.md), stroke width and colour
-- [Icon path format](https://github.com/ichava/documentation/blob/main/core/icon-path-format.md)
+- [Icon path format](https://opensource.simtabi.com/documentation/ichava/core/tools/icon-path-format)
+
+---
+
+[← Docs index](../README.md#documentation)

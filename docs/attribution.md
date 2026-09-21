@@ -40,3 +40,7 @@ to see whether a new upstream version is available.
 
 - [Tabler website](https://tabler-icons.io)
 - [Tabler GitHub](https://github.com/tabler/tabler-icons)
+
+---
+
+[← Docs index](../README.md#documentation)

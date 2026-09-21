@@ -71,5 +71,9 @@ Decorative icons (next to a text label) can omit the label, the SPA renderer add
 ## See also
 
 - [Variants](variants.md)
-- [Blade components](https://github.com/ichava/documentation/blob/main/core/blade-components.md)
-- [Global helper](https://github.com/ichava/documentation/blob/main/core/global-helper.md)
+- [Blade components](https://opensource.simtabi.com/documentation/ichava/core/tools/blade-components)
+- [Global helper](https://opensource.simtabi.com/documentation/ichava/core/tools/global-helper)
+
+---
+
+[← Docs index](../README.md#documentation)
