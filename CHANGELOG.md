@@ -4,6 +4,32 @@ All notable changes to `ichava/tabler-icons` follow [Keep a Changelog](https://k
 
 ## [Unreleased]
 
+### Changed
+
+- **`resources/lang/en/en.php` is now `resources/lang/en/icons.php`.** The old
+  path made the translation group `en`, so every key read
+  `<namespace>::en.name` with the locale doubled. Renaming now is free; renaming
+  after something reads these keys would not be.
+
+- **`name` and `description` dropped from the `en` file.**
+  `IconRegistry::fromDirectory()` reads both from
+  `resources/assets/svg/config.json`, which is canonical, and the copy here had
+  already drifted from it: the lang file said *"Over 5,000 pixel-perfect SVG
+  icons for web projects"* while `config.json` says *"Over 5,200 pixel-perfect
+  icons for web apps"*. Nothing noticed, because nothing loads this file. A
+  non-English locale may still override them.
+
+### Added
+
+- `variant_descriptions`, so the two variants carry an explanation rather than
+  just a label.
+- `tests/Unit/ResourceShapeTest.php`, pinning the canonical resource shape. Its
+  variant assertion compares the lang keys against the `Variant` enum, which is
+  what makes a file copied from another pack fail instead of shipping silently
+  -- `bundled-icons` shipped metronic's translation file for exactly that reason.
+
+  > Nothing loads these translations yet. No pack calls `hasTranslations()`.
+
 ### Fixed
 
 - **A failed SBOM download no longer takes the whole release down.** `release.yml` generates the
