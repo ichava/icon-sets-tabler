@@ -43,7 +43,7 @@ Custom stroke width (outline variant only):
 <x-ichava::icon name="ichava/icon-sets-tabler::outline/home" stroke-width="1.5" class="w-6 h-6" />
 ```
 
-## Pack-specific docs
+## <a name="documentation"></a>Documentation
 
 Vendor-specific deep dives live in this repo under [`docs/`](docs/). Anything that applies to *every* Ichava icon pack lives in the [main documentation repo](https://github.com/ichava/documentation/blob/main/README.md#icon-packs).
 
@@ -51,15 +51,15 @@ Vendor-specific deep dives live in this repo under [`docs/`](docs/). Anything th
 - [Customisation](docs/customization.md), stroke width, currentColor, sizing
 - [Attribution](docs/attribution.md), upstream Tabler credits + MIT terms
 
-## Ecosystem docs
+### Ecosystem
 
 For things that apply to every Ichava icon pack:
 
-- [Icon path format](https://github.com/ichava/documentation/blob/main/core/icon-path-format.md)
-- [Blade components](https://github.com/ichava/documentation/blob/main/core/blade-components.md)
-- [Global helper](https://github.com/ichava/documentation/blob/main/core/global-helper.md)
-- [Database seeding](https://github.com/ichava/documentation/blob/main/icon-packs/seeding-pack-icons.md)
-- [Browser SPA](https://github.com/ichava/documentation/blob/main/browser/installation.md)
+- [Icon path format](https://opensource.simtabi.com/documentation/ichava/core/tools/icon-path-format)
+- [Blade components](https://opensource.simtabi.com/documentation/ichava/core/tools/blade-components)
+- [Global helper](https://opensource.simtabi.com/documentation/ichava/core/tools/global-helper)
+- [Database seeding](https://opensource.simtabi.com/documentation/ichava/core/recipes/seed-pack-icons)
+- [Browser SPA](https://opensource.simtabi.com/documentation/ichava/browser/installation)
 
 ## What's included
 
@@ -98,7 +98,7 @@ to see whether a newer `@tabler/icons` release exists. The check hits
 dispatches `IconPackUpdateAvailable` events the host app can route to
 Slack / email / dashboards.
 
-See [`ichava/documentation/icon-pack-upstream-tracking.md`](https://github.com/ichava/documentation/blob/main/icon-pack-upstream-tracking.md)
+See [`ichava/documentation/icon-pack-upstream-tracking.md`](https://opensource.simtabi.com/documentation/ichava/maintainer-toolkit/upstream-tracking)
 for the full schema + how to subscribe to update events.
 
 ## Requirements
