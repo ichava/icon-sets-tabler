@@ -1,124 +1,45 @@
-# Tabler Icons for Laravel
+# ichava/icon-sets-tabler
 
-[![Latest Version](https://img.shields.io/packagist/v/ichava/icon-sets-tabler.svg)](https://packagist.org/packages/ichava/icon-sets-tabler)
-[![License](https://img.shields.io/packagist/l/ichava/icon-sets-tabler.svg)](LICENSE)
-[![PHP Version](https://img.shields.io/packagist/php-v/ichava/icon-sets-tabler.svg)](https://packagist.org/packages/ichava/icon-sets-tabler)
+[![Tests](https://github.com/ichava/icon-sets-tabler/actions/workflows/tests.yml/badge.svg)](https://github.com/ichava/icon-sets-tabler/actions/workflows/tests.yml)
+[![Code Quality](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml/badge.svg)](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-6,184 free MIT-licensed SVG icons from [Tabler Icons](https://tabler-icons.io) packaged for the [Ichava ecosystem](https://github.com/ichava/documentation). Outline + filled variants. Customisable stroke widths. Auto-updatable from upstream.
+> Tabler icons for the Ichava Laravel icon ecosystem — 6,184 SVGs across `outline` and `filled` variants, vendored from `@tabler/icons`.
 
-> Built on [`ichava/core`](https://github.com/ichava/core). See the [main documentation](https://github.com/ichava/documentation) for everything that applies to all icon packs.
+This package is not published to Packagist, so there is no registry-version badge to show. Requires [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/); targets PHP `^8.4.1 || ^8.5` on Laravel `^13`.
 
 ## Install
 
 ```bash
 composer require ichava/icon-sets-tabler
-```
-
-The provider auto-registers via Laravel package discovery. Seed the icon database:
-
-```bash
 php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-tabler
 ```
 
-For the visual icon browser, also install [`ichava/browser`](https://github.com/ichava/browser).
-
-## Quick example
-
-Blade component:
-
-```blade
-<x-ichava::icon name="ichava/icon-sets-tabler::outline/home" class="w-6 h-6" />
-<x-ichava::icon name="ichava/icon-sets-tabler::filled/heart" class="w-6 h-6 text-red-500" />
-```
-
-Fluent helper:
-
-```blade
-{{ ichava('ichava/icon-sets-tabler::outline/home')->color('#4338ca')->class('w-6 h-6') }}
-```
-
-Custom stroke width (outline variant only):
-
-```blade
-<x-ichava::icon name="ichava/icon-sets-tabler::outline/home" stroke-width="1.5" class="w-6 h-6" />
-```
+The seed is not optional — until it runs the registry holds no rows for this pack and every lookup returns nothing. See core's [installation guide](https://opensource.simtabi.com/documentation/ichava/core/installation).
 
 ## <a name="documentation"></a>Documentation
 
-Vendor-specific deep dives live in this repo under [`docs/`](docs/). Anything that applies to *every* Ichava icon pack lives in the [main documentation repo](https://github.com/ichava/documentation/blob/main/README.md#icon-packs).
+Full documentation is at **[opensource.simtabi.com/documentation/ichava/icon-sets-tabler](https://opensource.simtabi.com/documentation/ichava/icon-sets-tabler/)**.
 
-- [Variants](docs/variants.md), outline + filled
-- [Customisation](docs/customization.md), stroke width, currentColor, sizing
-- [Attribution](docs/attribution.md), upstream Tabler credits + MIT terms
+### This pack
 
-### Ecosystem
+- [Variants](docs/variants.md) — the two variants, the `Variant` enum, and when to reach for which
+- [Customisation](docs/customization.md) — sizing, colour, and stroke width
+- [Attribution](docs/attribution.md) — upstream project, licence terms, and where the vendored version is recorded
 
-For things that apply to every Ichava icon pack:
+### Shared across every pack
 
-- [Icon path format](https://opensource.simtabi.com/documentation/ichava/core/tools/icon-path-format)
-- [Blade components](https://opensource.simtabi.com/documentation/ichava/core/tools/blade-components)
-- [Global helper](https://opensource.simtabi.com/documentation/ichava/core/tools/global-helper)
-- [Database seeding](https://opensource.simtabi.com/documentation/ichava/core/recipes/seed-pack-icons)
-- [Browser SPA](https://opensource.simtabi.com/documentation/ichava/browser/installation)
+- [Use an icon pack](https://opensource.simtabi.com/documentation/ichava/core/recipes/use-an-icon-pack) — addressing icons, in Blade and in PHP
+- [Seed pack icons](https://opensource.simtabi.com/documentation/ichava/core/recipes/seed-pack-icons) — the seeding pipeline and its options
+- [Check pack updates](https://opensource.simtabi.com/documentation/ichava/core/recipes/check-pack-updates) — the update checker and what its statuses mean
+- [Serve icons from a CDN](https://opensource.simtabi.com/documentation/ichava/core/recipes/serve-icons-from-a-cdn) — reading this pack's CDN templates out of `config.json`
 
-## What's included
+Its upstream is `@tabler/icons`; run core's [check pack updates](https://opensource.simtabi.com/documentation/ichava/core/recipes/check-pack-updates) recipe to see whether a newer release exists.
 
-- 6,184 icons across two variants
-- **Outline** (`2px` stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"`)
-- **Filled** (`currentColor` fill, no stroke)
-- All SVGs 24×24 with `viewBox="0 0 24 24"`
+## Contributing & security
 
-Browse the full library at [tabler-icons.io](https://tabler-icons.io) or visually via the [`ichava/browser`](https://github.com/ichava/browser) SPA.
-
-## CDN endpoints (skip vendoring entirely)
-
-If you'd rather not ship the ~5MB of bundled SVGs inside your composer install,
-serve them from a CDN. The pack registers its CDN URL templates in
-`config.json` so other tooling can read them too; the canonical templates are:
-
-```
-https://cdn.jsdelivr.net/npm/@tabler/icons@{version}/icons/{variant}/{name}.svg
-https://unpkg.com/@tabler/icons@{version}/icons/{variant}/{name}.svg
-https://raw.githubusercontent.com/tabler/tabler-icons/v{version}/icons/{variant}/{name}.svg
-```
-
-- `{variant}` is `outline` or `filled`
-- `{name}` is the canonical icon slug (e.g. `home`, `arrow-right`)
-
-## Upstream tracking
-
-This pack participates in Ichava's upstream-tracking system. Run
-
-```bash
-php artisan ichava::ichava-core.check-updates --package=ichava/icon-sets-tabler
-```
-
-to see whether a newer `@tabler/icons` release exists. The check hits
-`registry.npmjs.org` (no rate limit), caches results for 12 hours, and
-dispatches `IconPackUpdateAvailable` events the host app can route to
-Slack / email / dashboards.
-
-See [`maintainer-toolkit/docs/upstream-tracking.md`](https://opensource.simtabi.com/documentation/ichava/maintainer-toolkit/upstream-tracking)
-for the full schema + how to subscribe to update events.
-
-## Requirements
-
-- PHP 8.3+
-- Laravel 13+
-- [`ichava/core`](https://github.com/ichava/core) `^1.0`
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Security
-
-Email `security@simtabi.com` privately. See [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately through [SECURITY.md](SECURITY.md) — never in a public issue.
 
 ## License
 
-This project is licensed under the MIT License.  
-
-© Simtabi LLC
-
-The bundled Tabler icon SVGs are MIT-licensed upstream; see [`docs/attribution.md`](docs/attribution.md) for upstream credits.
+MIT. © Simtabi LLC. See [LICENSE](LICENSE).
