@@ -14,7 +14,7 @@
       "pixel-perfect"
     ],
     "version": "0.1.0",
-    "upstream_version": "3.46.0",
+    "upstream_version": "3.47.0",
     "type": "single",
     "license": "MIT"
   },
@@ -78,7 +78,7 @@
       "package": "@tabler/icons",
       "_why_npm": "Tabler publishes SVGs to npm same-day as GitHub releases; npm has no rate-limit ceiling."
     },
-    "current_version": "3.46.0",
+    "current_version": "3.47.0",
     "version_check_url": "https://registry.npmjs.org/@tabler/icons/latest",
     "license": "MIT",
     "cdn": {
