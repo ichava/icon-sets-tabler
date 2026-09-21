@@ -2,6 +2,20 @@
 
 All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- **The README's link label named the old central docs repo.** The URL was already correct and
+  points at the hosted `maintainer-toolkit` page, while the text beside it still read
+  `ichava/documentation/icon-pack-upstream-tracking.md`. The label now names the page the link
+  opens.
+
+  **No link checker sees this class.** The label is a code span, not a target, so the link
+  resolves and the text next to it is wrong — `lychee` and every `](...)` sweep pass it. Found
+  by grepping for `` `…documentation/….md` `` rather than for links, after the estate-wide link
+  scan came back at zero.
+
 ## [0.3.0] - 2026-09-21
 
 ### Changed

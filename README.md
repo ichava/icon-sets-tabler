@@ -98,7 +98,7 @@ to see whether a newer `@tabler/icons` release exists. The check hits
 dispatches `IconPackUpdateAvailable` events the host app can route to
 Slack / email / dashboards.
 
-See [`ichava/documentation/icon-pack-upstream-tracking.md`](https://opensource.simtabi.com/documentation/ichava/maintainer-toolkit/upstream-tracking)
+See [`maintainer-toolkit/docs/upstream-tracking.md`](https://opensource.simtabi.com/documentation/ichava/maintainer-toolkit/upstream-tracking)
 for the full schema + how to subscribe to update events.
 
 ## Requirements
