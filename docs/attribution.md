@@ -1,5 +1,3 @@
-[← Package README](../README.md#pack-specific-docs)
-
 # Attribution and licence
 
 *Reference.*
