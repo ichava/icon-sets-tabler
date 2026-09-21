@@ -14,8 +14,8 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
   | Surface | Was | Now |
   |---|---|---|
-  | Composer package | `ichava/tabler-icons` | `ichava/icon-sets-tabler` |
-  | PHP namespace | `Simtabi\Laranail\Ichava\TablerIcons` | `Simtabi\Laranail\Ichava\IconSetsTabler` |
+  | Composer package | `ichava/icon-sets-tabler` | `ichava/icon-sets-tabler` |
+  | PHP namespace | `Simtabi\Laranail\Ichava\IconSetsTabler` | `Simtabi\Laranail\Ichava\IconSetsTabler` |
   | Config file and key | `config/tabler-icons.php` | `config/icon-sets-tabler.php` |
 
   The config **filename** must match the package short name or the key silently doubles and
