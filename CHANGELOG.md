@@ -6,6 +6,18 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **The "Authenticate Composer for private GitHub deps" step is gone.** It
+  configured a `GH_PACKAGES_PAT` against `github-oauth.github.com` because
+  `ichava/core` and `laranail/package-tools` were private. **Both are public
+  now**, and so is every other dependency this pack resolves, so the step
+  authenticated nothing.
+
+  It was already dead rather than merely redundant, and the estate proved it:
+  `icon-sets-emoji`'s `tests.yml` carries no such step and has been resolving
+  `ichava/core` from a VCS repository on every CI run, green. Removing it is
+  therefore not a gamble on rate limits -- it is matching the configuration
+  that already works.
+
 - **CI no longer builds coverage.** `setup-php` installed `pcov` and the suite
   ran `vendor/bin/pest --coverage`, but **nothing consumed the result** -- there
   is no `--min=` threshold, no Codecov upload and no artifact. Only `ichava/core`
