@@ -2,6 +2,40 @@
 
 All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- **The markdown path filter now matches markdown at any depth.**
+  `code-quality.yml` and `tests.yml` carried `paths-ignore: '*.md'`. In GitHub's
+  filter syntax a single `*` does not cross a `/`, so that pattern matched a
+  root-level `README.md` and nothing else -- every edit under `docs/` ran the
+  full PHP suite and the static-analysis job, which is precisely what the filter
+  existed to skip. `'**.md'` matches at any depth.
+
+  Worth stating which direction this failed in, because it decides how urgent it
+  was: a broken `paths-ignore` runs **more** than it should, never less. The cost
+  was CI minutes on a free-plan allowance, not a gate that stopped firing.
+
+### Added
+
+- **A test pins `metadata.homepage`.** The value here was already correct; the
+  guard exists because it was wrong in two of the five packs and nothing in the
+  estate would have caught it.
+
+  The rule it asserts: `metadata.homepage` is the **upstream project's** own
+  site, never one of ours. `metadata.repository` is this package's repository
+  and `composer.json`'s `homepage` is its landing page, so a `homepage` under
+  `github.com/ichava/` makes two fields ship the same link under different
+  names. It is asserted twice -- once against the exact URL, once against the
+  general rule that it never contains `github.com/ichava/` -- so the guard
+  survives an upstream rename.
+
+  It drifted unnoticed because nothing renders it. `IconRegistry` reads it into
+  the pack descriptor and the browser API allows it through `publicMetadata()`,
+  but no frontend consumes it, so a wrong value is invisible until somebody
+  reads the JSON.
+
 ## [0.3.2] - 2026-09-21
 
 ### Fixed
