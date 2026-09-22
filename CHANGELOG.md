@@ -6,6 +6,15 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **`.editorconfig` covers JSON.** The `[*.{yml,yaml}]` section is now
+  `[*.{yml,yaml,json,jsonc}]`, matching the other three packs. This is the one
+  piece of scaffolding drift that ran the other way: here the convergence work
+  found this pack behind, not ahead.
+
+- **`phpunit.xml.dist` sets the test environment explicitly.** The `<php>`
+  block pinning `APP_ENV`, `DB_CONNECTION` and `CACHE_DRIVER` was missing, so
+  the suite inherited whatever the ambient environment held.
+
 - **The markdown path filter now matches markdown at any depth.**
   `code-quality.yml` and `tests.yml` carried `paths-ignore: '*.md'`. In GitHub's
   filter syntax a single `*` does not cross a `/`, so that pattern matched a
