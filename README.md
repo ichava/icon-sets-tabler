@@ -43,7 +43,7 @@ Its upstream is `@tabler/icons`; run core's [check pack updates](https://opensou
 
 ## Contributing & security
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately through [SECURITY.md](SECURITY.md) — never in a public issue.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately through [security policy](https://github.com/ichava/icon-sets-tabler/security/policy) — never in a public issue.
 
 ## License
 
