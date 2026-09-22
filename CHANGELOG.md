@@ -2,7 +2,26 @@
 
 All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.3.3] - 2026-09-22
+
+### Added
+
+- **A test pins `metadata.homepage`.** The value here was already correct; the
+  guard exists because it was wrong in two of the five packs and nothing in the
+  estate would have caught it.
+
+  The rule it asserts: `metadata.homepage` is the **upstream project's** own
+  site, never one of ours. `metadata.repository` is this package's repository
+  and `composer.json`'s `homepage` is its landing page, so a `homepage` under
+  `github.com/ichava/` makes two fields ship the same link under different
+  names. It is asserted twice -- once against the exact URL, once against the
+  general rule that it never contains `github.com/ichava/` -- so the guard
+  survives an upstream rename.
+
+  It drifted unnoticed because nothing renders it. `IconRegistry` reads it into
+  the pack descriptor and the browser API allows it through `publicMetadata()`,
+  but no frontend consumes it, so a wrong value is invisible until somebody
+  reads the JSON.
 
 ### Changed
 
@@ -51,25 +70,6 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   longer exists, so every cross-reference to it resolved to a 404. The reporting channels in
   `SECURITY.md` were already stated inline and are unchanged; the Code of Conduct now cites the
   Contributor Covenant directly. Historical mentions in this changelog are left as written.
-
-### Added
-
-- **A test pins `metadata.homepage`.** The value here was already correct; the
-  guard exists because it was wrong in two of the five packs and nothing in the
-  estate would have caught it.
-
-  The rule it asserts: `metadata.homepage` is the **upstream project's** own
-  site, never one of ours. `metadata.repository` is this package's repository
-  and `composer.json`'s `homepage` is its landing page, so a `homepage` under
-  `github.com/ichava/` makes two fields ship the same link under different
-  names. It is asserted twice -- once against the exact URL, once against the
-  general rule that it never contains `github.com/ichava/` -- so the guard
-  survives an upstream rename.
-
-  It drifted unnoticed because nothing renders it. `IconRegistry` reads it into
-  the pack descriptor and the browser API allows it through `publicMetadata()`,
-  but no frontend consumes it, so a wrong value is invisible until somebody
-  reads the JSON.
 
 ## [0.3.2] - 2026-09-21
 
