@@ -6,6 +6,15 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **CI no longer builds coverage.** `setup-php` installed `pcov` and the suite
+  ran `vendor/bin/pest --coverage`, but **nothing consumed the result** -- there
+  is no `--min=` threshold, no Codecov upload and no artifact. Only `ichava/core`
+  gates on coverage, at 80%.
+
+  So this was an extension install and a slower run on every matrix cell, for a
+  number nobody read. `coverage: none`, `vendor/bin/pest`. Two of the five packs
+  were doing this; the other three already were not.
+
 - **`.editorconfig` covers JSON.** The `[*.{yml,yaml}]` section is now
   `[*.{yml,yaml,json,jsonc}]`, matching the other three packs. This is the one
   piece of scaffolding drift that ran the other way: here the convergence work
