@@ -96,3 +96,34 @@ it(description: 'points metadata.repository at this package, not its upstream', 
     // `metadata.homepage` points at the upstream's own site where one exists.
     expect($config['metadata']['repository'])->toBe('https://github.com/ichava/icon-sets-tabler');
 });
+
+it(description: 'points metadata.homepage at the upstream project, never at this package', closure: function () {
+    $config = json_decode(
+        (string) file_get_contents(tabler_resources() . '/assets/svg/config.json'),
+        true,
+        flags: JSON_THROW_ON_ERROR,
+    );
+
+    // Settled 2026-09-22, enforcing what the repository guard above already
+    // states: `metadata.homepage` is the UPSTREAM project's own site.
+    //
+    // This pack already held the right value; the guard exists because two
+    // others did not, and nothing would have caught it. `metadata.homepage`
+    // reaches a consumer -- `IconRegistry` reads it into the pack descriptor
+    // and the browser API allows it through `publicMetadata()` beside
+    // `repository` -- but no frontend renders it, so a wrong value is
+    // invisible until someone reads the JSON.
+    //
+    // Tabler publishes its icons at a site of its own, distinct from the
+    // `tabler/tabler-icons` repository that `upstream.update_command` pulls
+    // archives from. Both are upstream facts; this field is the human-facing
+    // one.
+    $homepage = $config['metadata']['homepage'] ?? null;
+
+    expect($homepage)->toBe('https://tabler-icons.io/')
+        ->and($homepage)->not->toBe($config['metadata']['repository']);
+
+    // The general rule, asserted separately so it survives an upstream rename:
+    // whatever this holds, it is never one of OUR URLs.
+    expect($homepage)->not->toContain('github.com/ichava/');
+});
