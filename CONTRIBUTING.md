@@ -4,7 +4,7 @@ This package is a thin Ichava-ecosystem layer; the contribution process,
 coding standards, branch conventions, and review workflow are shared with
 the core package.
 
-→ See **[ichava/ichava CONTRIBUTING.md](https://github.com/ichava/ichava/blob/main/CONTRIBUTING.md)** for the full guide.
+→ See **[ichava/core CONTRIBUTING.md](https://github.com/ichava/core/blob/main/CONTRIBUTING.md)** for the full guide.
 
 ## Package-specific notes
 
