@@ -4,7 +4,7 @@
 [![Code Quality](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml/badge.svg)](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> Tabler icons for the Ichava Laravel icon ecosystem — 6,184 SVGs across `outline` and `filled` variants, vendored from `@tabler/icons`.
+> Tabler icons for the Ichava Laravel icon ecosystem — 6,202 SVGs across `outline` and `filled` variants, vendored from `@tabler/icons`.
 
 This package is not published to Packagist, so there is no registry-version badge to show. Requires [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/); targets PHP `^8.4.1 || ^8.5` on Laravel `^13`.
 
@@ -23,6 +23,11 @@ Full documentation is at **[opensource.simtabi.com/documentation/ichava/icon-set
 
 ### This pack
 
+- [Installation](docs/installation.md) — requirements, the repositories block, seeding
+- [Getting started](docs/getting-started.md) — your first icon from this pack
+- [Configuration](docs/configuration.md) — this pack's config key, and what is core's instead
+- [Architecture](docs/architecture.md) — what it ships, what it delegates, and why
+- [Release](docs/release.md) — how a version is cut, and when the core floor moves
 - [Variants](docs/variants.md) — the two variants, the `Variant` enum, and when to reach for which
 - [Customisation](docs/customization.md) — sizing, colour, and stroke width
 - [Attribution](docs/attribution.md) — upstream project, licence terms, and where the vendored version is recorded

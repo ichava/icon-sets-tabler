@@ -3,7 +3,7 @@
 *Reference.*
 
 
-`ichava/icon-sets-tabler` ships **6,184 icons across two variants**, relocated here from the README:
+`ichava/icon-sets-tabler` ships **6,202 icons across two variants**, relocated here from the README:
 
 - **Outline** — `2px` stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"`
 - **Filled** — `currentColor` fill, no stroke
