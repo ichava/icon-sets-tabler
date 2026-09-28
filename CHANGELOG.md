@@ -6,6 +6,16 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **Seeded icons now carry their variant.** This pack has always declared `outline`
+  and `filled` in `config.json`, but `ichava/core` attached categories only, so
+  every seeded icon came back with a null variant and the browser's variant
+  filter was empty. Core's seeder now attaches variants from the first
+  directory after `files/`, so `files/outline/ad-circle.svg` seeds with the
+  `outline` variant and addresses as `ichava/icon-sets-tabler::outline/ad-circle`.
+  No code in this package changed; this records the effect a consumer sees once
+  they are on a core that does it. Existing rows keep their null variant until
+  the affected icons are re-seeded.
+
 - **`composer.json` lists `laranail/db-tools` as a VCS repository.** `ichava/core` is about to
   require it, and Composer reads `repositories` from the root package only, so a
   consumer that does not declare it cannot resolve core at all. The entry is harmless
