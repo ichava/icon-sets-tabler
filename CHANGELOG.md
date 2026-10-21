@@ -6,6 +6,10 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **The sync workflow's verification step can run the suite.** It called `composer update` on
+  the bare runner, with no `setup-php` and no `COMPOSER_AUTH`, so Composer could not
+  authenticate against github.com for the `vcs` repositories and every verification reported
+  failure without running a test. It now sets up PHP 8.5 and passes the workflow token.
 - **Seeded icons now carry their variant.** This pack has always declared `outline`
   and `filled` in `config.json`, but `ichava/core` attached categories only, so
   every seeded icon came back with a null variant and the browser's variant
