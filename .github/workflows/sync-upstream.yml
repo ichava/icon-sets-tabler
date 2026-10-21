@@ -109,10 +109,23 @@ jobs:
       # `statuses: write` above. Run the suite against whatever the sync just
       # pushed and attach the verdict to that commit, so the PR shows a real
       # pass/fail instead of silence.
+      # The verify step runs Composer on the runner itself, so it needs the
+      # PHP the package requires and a token for the `vcs` repositories in
+      # composer.json. Without either, `composer update` fails with "Could not
+      # authenticate against github.com" and the suite never runs.
+      - name: Set up PHP for verification
+        if: success()
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: '8.5'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, intl
+          coverage: none
+
       - name: Verify the synced branch and report a commit status
         if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GITHUB_TOKEN }}"}}'
         run: |
           set -euo pipefail
 
