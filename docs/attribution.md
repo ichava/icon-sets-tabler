@@ -24,7 +24,7 @@ The Tabler maintainers do not require attribution per the licence, but small cre
 ## Updating from upstream
 
 Asset refreshes run **maintainer-side** via
-[`ichava/maintainer-toolkit`](https://github.com/ichava/maintainer-toolkit).
+[`ichava/icon-sets-sync`](https://github.com/ichava/icon-sets-sync).
 Cron polls `@tabler/icons` on npm, refreshes the bundled SVGs when
 upstream moves, and opens a PR. A human reviews + tags a release;
 Packagist + `composer update` fans the change out.

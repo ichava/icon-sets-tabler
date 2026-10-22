@@ -6,6 +6,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **References follow the repository renames.** `ichava/maintainer-toolkit` is now `ichava/icon-sets-sync`, `ichava/motion` is `ichava/js-motion` and `ichava/react-browser` is `ichava/react-icon-browser`. GitHub redirects the old names, but redirects are not permanent.
 - **The sync workflow's verification step can run the suite.** It called `composer update` on
   the bare runner, with no `setup-php` and no `COMPOSER_AUTH`, so Composer could not
   authenticate against github.com for the `vcs` repositories and every verification reported

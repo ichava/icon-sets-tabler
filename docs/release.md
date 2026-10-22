@@ -41,7 +41,7 @@ An empty result means no consumed code moved.
 ## Refreshing the icons is not a release
 
 New icons arrive by an upstream sync, not by cutting a tag here.
-[`ichava/maintainer-toolkit`](https://opensource.simtabi.com/documentation/ichava/maintainer-toolkit/upstream-tracking)
+[`ichava/icon-sets-sync`](https://opensource.simtabi.com/documentation/ichava/icon-sets-sync/upstream-tracking)
 polls `@tabler/icons`, refreshes the vendored SVGs, bumps `upstream.current_version` in
 `resources/assets/svg/config.json` and opens a pull request. That pull request is the change; a
 release follows it only if you want the new icons published under a tag.
