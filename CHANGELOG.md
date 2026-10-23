@@ -10,6 +10,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Fixed
 
+- **`config.json` keeps up with releases.** Release-please now moves `resources/assets/svg/config.json`'s `package.version` with each release (`extra-files`), so the version the icon registry reports stays equal to the released one. Before this it stayed at the value it had when release-please was added. `ReleaseVersionTest` fails if `package.version` differs from `.release-please-manifest.json`, if the `extra-files` entry goes missing, or if the branch alias and the `ichava/core` constraint stop naming the same minor, or drift more than one minor ahead of the released one.
 - **The release pull request is found in the same run that opens it.** The step that hands the release branch to the changelog close asked `gh pr list --label 'autorelease: pending'`, which goes through GitHub's search index; on the first live run (js-motion#30) the index had not caught up with the pull request opened seconds earlier, so the close was skipped and a second dispatch was needed. It now takes the branch from release-please's own `pr` output, and only when the action reports nothing (the pull request was already current) falls back to the open pull requests, matched by the `release-please--branches--main` prefix rather than the label.
 
 ## [0.1.0] - 2026-10-23
