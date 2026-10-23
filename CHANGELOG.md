@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-23
+
+Versioning re-based to 0.1.0. This release contains everything previously tagged v0.1.0 through v0.3.4 (2026-08-31 to 2026-09-26) plus the changes below, and requires `ichava/core` `^0.1`, the re-based core. Those tags and their GitHub releases were removed; every commit they pointed at is on `main`, and their sections are kept under *Archived pre-reset history*.
+
 ### Changed
 
 - **References follow the repository renames.** `ichava/maintainer-toolkit` is now `ichava/icon-sets-sync`, `ichava/motion` is `ichava/js-motion` and `ichava/react-browser` is `ichava/react-icon-browser`. GitHub redirects the old names, but redirects are not permanent.
@@ -26,9 +30,14 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   consumer that does not declare it cannot resolve core at all. The entry is harmless
   until then. Nothing here is on Packagist.
 
-## [0.3.4] - 2026-09-26
+## [Archived pre-reset history]
 
-### Added
+> Versioning was re-based to 0.1.0 on 2026-10-23. The tags and GitHub releases below were removed;
+> every commit they pointed at is on `main`. Sections reproduced verbatim, one heading level down.
+
+### [0.3.4] - 2026-09-26
+
+#### Added
 
 - **A test pins the `docs/` shape, and a workflow runs it on the changes that
   break it.** `tests/Unit/DocsShapeTest.php` asserts the five concern pages the
@@ -47,7 +56,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   asserted non-empty before it is cross-checked. A glob that matches nothing
   otherwise makes every assertion below it true over a directory it never read.
 
-### Changed
+#### Changed
 
 - **`SECURITY.md` removed; the organization policy serves this repository now.**
   The file was byte-identical across six ichava repositories and held nothing
@@ -63,9 +72,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   went, so it now points at `/security/policy` directly. `composer.json` and the
   issue-template link already did.
 
-## [0.3.3] - 2026-09-22
+### [0.3.3] - 2026-09-22
 
-### Added
+#### Added
 
 - **A test pins `metadata.homepage`.** The value here was already correct; the
   guard exists because it was wrong in two of the five packs and nothing in the
@@ -84,7 +93,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   but no frontend consumes it, so a wrong value is invisible until somebody
   reads the JSON.
 
-### Changed
+#### Changed
 
 - **The "Authenticate Composer for private GitHub deps" step is gone.** It
   configured a `GH_PACKAGES_PAT` against `github-oauth.github.com` because
@@ -132,9 +141,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   `SECURITY.md` were already stated inline and are unchanged; the Code of Conduct now cites the
   Contributor Covenant directly. Historical mentions in this changelog are left as written.
 
-## [0.3.2] - 2026-09-21
+### [0.3.2] - 2026-09-21
 
-### Fixed
+#### Fixed
 
 - **Every documentation page carried the index breadcrumb twice.**
   `[← Docs index](../README.md#documentation)` sat on line 1 as well as in its correct position
@@ -152,9 +161,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   API read to zero said fewer still -- an empty response and a clean page are not the same thing,
   and only one of them is true.
 
-## [0.3.1] - 2026-09-21
+### [0.3.1] - 2026-09-21
 
-### Changed
+#### Changed
 
 - **`ichava/core` `^0.4` is accepted.** The constraint read `^0.2.8 || ^0.3`, and a caret on a
   `0.x` version pins the *minor*, so `0.4.0` did not satisfy it at all. An application that wanted
@@ -165,7 +174,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   here calls an API that `0.4` introduced, so raising the floor would strand 0.2 and 0.3 consumers
   for no gain.
 
-### Fixed
+#### Fixed
 
 - **`branch-alias` names the series `main` is on, not the one before it.**
   `dev-main` was aliased to `0.2.x-dev` while this package has been on the 0.3
@@ -189,9 +198,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   by grepping for `` `…documentation/….md` `` rather than for links, after the estate-wide link
   scan came back at zero.
 
-## [0.3.0] - 2026-09-21
+### [0.3.0] - 2026-09-21
 
-### Changed
+#### Changed
 
 - **Renamed to `ichava/icon-sets-tabler`.** The composer package, the GitHub repository and the local
   directory now all read `icon-sets-tabler`, restoring the one-name rule the ecosystem relies on.
@@ -213,9 +222,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   token with our old name; a blanket rename would have aimed the update checker at a package
   that does not exist and broken the CDN templates, failing in a host app rather than in CI.
 
-## [0.2.6] - 2026-09-21
+### [0.2.6] - 2026-09-21
 
-### Changed
+#### Changed
 
 - **`resources/lang/en/en.php` is now `resources/lang/en/icons.php`.** The old
   path made the translation group `en`, so every key read
@@ -230,7 +239,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   icons for web apps"*. Nothing noticed, because nothing loads this file. A
   non-English locale may still override them.
 
-### Added
+#### Added
 
 - `variant_descriptions`, so the two variants carry an explanation rather than
   just a label.
@@ -241,7 +250,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
   > Nothing loads these translations yet. No pack calls `hasTranslations()`.
 
-### Added
+#### Added
 
 - **`actionlint` runs on every pull request.** Nothing validated the workflow files at all:
   `release.yml` triggers only on `push: tags`, so a broken workflow was first observed as a
@@ -256,7 +265,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   key, and an `if:` referencing a property that does not exist are all caught, while
   `yaml.safe_load` still parses the first of them without complaint.
 
-### Fixed
+#### Fixed
 
 - **A failed SBOM download no longer takes the whole release down.** `release.yml` generates the
   SBOM before it publishes, and the Syft installer fetches its checksums from GitHub's
@@ -277,7 +286,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   default, but the point of this change is that a missing SBOM must not fail the publish, so it
   should not rest on a default a future reader has to know.
 
-### Security
+#### Security
 
 - **Floor raised to `ichava/core: ^0.2.8`.** Core `0.2.8` fixes two issues a pack inherits
   through the engine: `%` and `_` in a search query acted as `LIKE` wildcards, widening results
@@ -288,9 +297,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   The `|| ^0.3` arm is unchanged — core `0.3.0` moved the scaffolder out but left the engine,
   registry, seeder and SVG pipeline untouched, so an installed pack is unaffected by it.
 
-## [0.2.5] - 2026-09-21
+### [0.2.5] - 2026-09-21
 
-### Changed
+#### Changed
 
 - **`ichava/core` widened to `^0.2.5 || ^0.3`.** Core `0.3.0` removes the icon-package
   scaffolder and its stub tree, which moved to `ichava/icon-package-scaffolder`. This package
@@ -302,9 +311,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   forced a core upgrade on anyone deliberately staying on 0.2.x, for the same non-reason.
   Both series genuinely work, so the constraint says so.
 
-## [0.2.4] - 2026-09-21
+### [0.2.4] - 2026-09-21
 
-### Security
+#### Security
 
 - **Floor raised to `ichava/core: ^0.2.5`.** Core `0.2.5` closes an address-notation gap in the
   pack update-check guard: `isPublicIp()` judged addresses by how they were written, so
@@ -316,9 +325,9 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   stacks will not route it. The floor moves anyway, because a constraint that can resolve to a
   release with a known gap is the thing this rule exists to prevent.
 
-## [0.2.3] - 2026-09-21
+### [0.2.3] - 2026-09-21
 
-### Security
+#### Security
 
 - **Floor raised to `ichava/core: ^0.2.4`.** Core `0.2.4` carries seven security fixes — post-
   sanitizer attribute gating, icon-path containment, off-document paint URLs, sanitizer policy
@@ -326,18 +335,18 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   restriction. `^0.2.3` still permitted resolving to `0.2.3`, which has all seven. Raising a
   floor to exclude a known-broken release is not a pin; the constraint stays a range.
 
-## [0.2.2] - 2026-09-16
+### [0.2.2] - 2026-09-16
 
-### Changed
+#### Changed
 
 - **Requires `ichava/core: ^0.2.3`.** `0.2.2` decided readiness against columns the schema has
   never had, so `ichava::ichava-core.info status` reported `UNINITIALIZED` on a fully seeded
   database and both auto-seed listeners, which gate on the same check, never fired. The floor is
   raised rather than the range widened; it still tracks every `0.2.x` from `0.2.3` on.
 
-## [0.2.1] - 2026-09-16
+### [0.2.1] - 2026-09-16
 
-### Changed
+#### Changed
 
 - **Requires `ichava/core: ^0.2.2`.** The floor is raised rather than the range widened: `0.2.0`
   invoked six of its own Artisan commands by names it had just retired, and `0.2.1` still passed
@@ -345,21 +354,21 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   no tables. `^0.2` admitted both. Raising a floor to exclude a known-broken release is not a
   pin — the range still tracks every `0.2.x` from `0.2.2` on.
 
-## [0.2.0] - 2026-09-16
+### [0.2.0] - 2026-09-16
 
-### Breaking
+#### Breaking
 
 - **Requires `ichava/core: ^0.2`.** Core `0.2.0` moved its config key to `ichava.ichava-core.*`
   and renamed every Artisan command with no bare aliases, so a host application upgrading this
   package has to upgrade core with it.
 
-### Added
+#### Added
 
 - `release.yml` — a `v*.*.*` tag now publishes a release whose body is that version's CHANGELOG
   section, and fails closed when the tagged version has no section.
 - PHPStan static analysis (level 0) with `composer analyse` and a code-quality CI workflow.
 
-### Changed
+#### Changed
 
 - Third-party GitHub Actions pinned to the commit SHA of their latest release; `actions/*` keep
   floating on a major tag. A tag is mutable, so `@v4` is a promise the action's owner can
@@ -371,11 +380,11 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 - Aligned Pest to `^4.6 || ^5.0`, PHPUnit strict flags, and CI branch triggers on `main` only.
 - Install command requires only the pack. `ichava/core` installs as a dependency.
 
-### Fixed
+#### Fixed
 
 - Icon examples now use variant-prefixed paths (`outline/home`, `filled/home`). Bare `ichava/icon-sets-tabler::home` does not resolve.
 
-## [0.1.0] - 2026-08-31
+### [0.1.0] - 2026-08-31
 
 First open-source release. An icon pack for the Ichava ecosystem: **6,146 SVGs**, registered with
 `IconRegistry` at boot and served through `ichava/core`. Outline and filled variants, customisable stroke width. Upstream: Tabler Icons (MIT).
@@ -386,7 +395,7 @@ packs at runtime. Categories are `outline`, `filled`.
 Earlier tags existed on GitHub and were never published to Packagist. They are withdrawn: the
 ecosystem restarts from a single `0.1.0` across every package.
 
-### Added
+#### Added
 
 - `IconsServiceProvider`, auto-discovered through `extra.laravel.providers`.
 - `IconsConstants` reading the pack's `config.json`, and a type-safe enum implementing
@@ -394,7 +403,7 @@ ecosystem restarts from a single `0.1.0` across every package.
 - An `IconComponent` extending core's base component, so `<x-ichava::icon>` resolves this pack's
   paths in both the `vendor/package::category/name` and dot forms.
 
-### Fixed
+#### Fixed
 
 - **`ichava/core` is pinned to a single line.** The constraint was `^1.0 || ^2.0` while
   `ichava/browser` required `^2.0`, so a resolver could legally pair core 1.x with a browser
@@ -403,7 +412,7 @@ ecosystem restarts from a single `0.1.0` across every package.
   dependencies.** None is published on Packagist, and Composer reads `repositories` only from the
   root package, so a pack installed as the root could not locate them at all.
 
-### Requirements
+#### Requirements
 
 - PHP `^8.4.1 || ^8.5`, `illuminate/support` `^13.0`, `ichava/core` `^0.1`,
   `laranail/package-tools` `^0.1.0`.
