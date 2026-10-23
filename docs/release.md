@@ -9,8 +9,8 @@ publishes. So a release is two acts: land the change through a pull request, the
 commit.
 
 ```bash
-git tag v0.3.3
-git push origin v0.3.3
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
 ## The changelog is the release body
@@ -22,9 +22,9 @@ descend.
 
 ## The core constraint is the release decision
 
-`composer.json` requires `ichava/core` `^0.2.8 || ^0.3 || ^0.4`. Below `1.0` a caret pins the **minor**, so
-that multi-arm constraint is doing real work: it admits several core series rather than trapping
-consumers on one.
+`composer.json` requires `ichava/core` `^0.1`. Below `1.0` a caret pins the **minor**, so a new core
+minor reaches this pack only once the constraint is widened to admit it (`^0.1 || ^0.2`), never by
+raising it alone, which would trap consumers who stay on the older series.
 
 - **Widen** when a new core minor is compatible and this pack never used what changed.
 - **Raise the floor** when core ships a security fix in code this pack runs -- the old constraint
@@ -52,6 +52,14 @@ prose as well is how a README came to advertise a release the pack did not ship.
 
 There is no `version` field in `composer.json`; the version comes from the tag. No lock file is
 committed.
+
+## The 0.1.0 re-base
+
+Versioning was re-based on 2026-10-23, with every other ichava package. The tags `v0.1.0` to
+`v0.3.4` (2026-08-31 to 2026-09-26) and their GitHub releases were removed, and `main` was tagged `v0.1.0`. Every
+commit those tags pointed at is on `main`, so no code was lost; their notes are kept in
+`CHANGELOG.md` under *Archived pre-reset history*. Version numbers in older changelog entries and
+issues refer to that earlier series.
 
 ---
 

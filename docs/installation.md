@@ -4,7 +4,7 @@ Three steps: point Composer at the repositories, require the pack, seed it.
 
 ## Requirements
 
-PHP `^8.4.1 || ^8.5`, Laravel `^13`, and [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/) `^0.2.8 || ^0.3 || ^0.4` on the same application.
+PHP `^8.4.1 || ^8.5`, Laravel `^13`, and [`ichava/core`](https://opensource.simtabi.com/documentation/ichava/core/) `^0.1` on the same application.
 Core is the engine; this pack is only icons and the provider that registers them.
 
 ## The repositories block
