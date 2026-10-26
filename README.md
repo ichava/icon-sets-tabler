@@ -47,4 +47,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately through
 
 ## License
 
-MIT. © Simtabi LLC. See [LICENSE](LICENSE).
+The package code is MIT, © Simtabi LLC. See [LICENSE](LICENSE).
+
+The icons are [Tabler Icons](https://tabler-icons.io), © Paweł Kuna, under their own MIT licence. Simtabi LLC claims no authorship of them. Their notice is in [ATTRIBUTION.md](ATTRIBUTION.md), which ships with the package and must accompany any copy of the icons.

@@ -8,18 +8,18 @@
 
 ## Licence
 
-Both the upstream Tabler Icons project and this `ichava/icon-sets-tabler` package are licensed under the **MIT License**. You may use the icons in commercial and non-commercial projects, modify them, and redistribute them, provided the licence text accompanies any redistribution.
+The icons and this package are owned separately, and both are under the **MIT License**:
 
-- Upstream icon licence: [MIT](https://github.com/tabler/tabler-icons/blob/main/LICENSE)
-- This package: [MIT](../LICENSE)
+- **The icons** are © Paweł Kuna and the Tabler Icons contributors, [MIT](https://github.com/tabler/tabler-icons/blob/main/LICENSE). Simtabi LLC redistributes them and claims no authorship of them.
+- **This package's code** (provider, enum, component, configuration) is © Simtabi LLC, [MIT](../LICENSE).
 
-## Credit (optional but appreciated)
+MIT allows commercial and non-commercial use, modification and redistribution, provided the copyright notice and permission notice accompany every copy. That is a condition, not a courtesy: the upstream notice is reproduced in [`ATTRIBUTION.md`](../ATTRIBUTION.md) at the package root, which ships in the dist archive (`docs/` does not). Keep it with the icons if you copy them out of the package.
 
-If your project's "credits" or "about" page lists icon sources, please include something like:
+## Credit
 
-> Icons from [Tabler Icons](https://tabler-icons.io) (MIT)
+A visible credit is not required by the licence, but is welcome on a "credits" or "about" page:
 
-The Tabler maintainers do not require attribution per the licence, but small credits help sustain open-source icon work.
+> Icons from [Tabler Icons](https://tabler-icons.io) by Paweł Kuna (MIT)
 
 ## Updating from upstream
 
