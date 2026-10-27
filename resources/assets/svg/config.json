@@ -13,7 +13,7 @@
       "open-source",
       "pixel-perfect"
     ],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "upstream_version": "3.49.0",
     "type": "single",
     "license": "MIT"
@@ -21,7 +21,7 @@
   "metadata": {
     "authors": [
       {
-        "name": "Pawe\u0142 Kuna",
+        "name": "Paweł Kuna",
         "email": "",
         "role": "Creator & Designer",
         "url": "https://twitter.com/codecalm"
