@@ -16,6 +16,7 @@
     "version": "0.1.1",
     "upstream_version": "3.49.0",
     "type": "single",
+    "kind": "icon",
     "license": "MIT"
   },
   "metadata": {
