@@ -1,23 +1,18 @@
 # Configuration
 
-*Reference.* What this pack's config file holds, and what belongs to core instead.
+*Reference.* Why this pack has no config file, and where its settings live instead.
 
-## The file and its key
+## No config file
 
-`config/icon-sets-tabler.php`, merged at `ichava.icon-sets-tabler`. **The filename must match the package short name** -- a
-different name silently doubles the key and every read returns `null`, which shipped undetected in
-this ecosystem once before.
+This pack ships no config file, so there is no `ichava.icon-sets-tabler` key and no publish tag. The file it used
+to ship held only copies of the set name and prefix, which nothing read: core takes both from
+`resources/assets/svg/config.json` through `IconsConstants`. It was removed rather than left empty.
 
-```bash
-php artisan vendor:publish --tag=ichava::icon-sets-tabler-config
-```
+## Where its settings live
 
-Publishing is optional; the defaults are merged either way.
-
-## What is here
-
-Only what is specific to this pack -- the set name and prefix it registers under, and its own
-addressing defaults. Read the published file for the current list rather than a copy of it here.
+`resources/assets/svg/config.json` is canonical for the pack's name, prefix, kind, variants and
+categories, and core reads it when the provider registers the pack. A host changes behaviour through
+core's configuration, below, not by editing the pack.
 
 ## What is not here
 
@@ -25,7 +20,7 @@ Cache, queue, database, logging, security and the `ICHAVA_*` environment surface
 apply to every pack at once. They are documented in core's
 [configuration guide](https://opensource.simtabi.com/documentation/ichava/core/configuration) and [environment variables](https://opensource.simtabi.com/documentation/ichava/core/environment).
 
-A value set here cannot change how core seeds, caches or sanitises; that is the point of the split.
+Nothing in this pack can change how core seeds, caches or sanitises; that is the point of the split.
 
 ---
 

@@ -32,15 +32,6 @@ php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-tabler
 lookup returns nothing, which is the most common "it does not work" in the ecosystem. See
 [seed pack icons](https://opensource.simtabi.com/documentation/ichava/core/recipes/seed-pack-icons).
 
-## Publish the config, only if you need it
-
-```bash
-php artisan vendor:publish --tag=ichava::icon-sets-tabler-config
-```
-
-That writes `config/icon-sets-tabler.php`, read back as `ichava.icon-sets-tabler`. The defaults are merged without publishing,
-so publish only to change something -- see [Configuration](configuration.md).
-
 ---
 
 [← Docs index](../README.md#documentation)

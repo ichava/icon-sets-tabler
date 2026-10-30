@@ -30,16 +30,4 @@ return [
         'outline' => 'Stroked icons with a configurable stroke width',
         'filled'  => 'Solid icons with no stroke',
     ],
-
-    'commands' => [
-        'update'   => 'Update Tabler Icons from GitHub',
-        'fetching' => 'Fetching latest release of Tabler Icons...',
-        'complete' => 'Tabler Icons updated successfully!',
-    ],
-
-    'info' => [
-        'version'      => 'Version :version',
-        'total_icons'  => ':count icons available',
-        'stroke_width' => 'Stroke width: :width',
-    ],
 ];

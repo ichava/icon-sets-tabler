@@ -25,8 +25,7 @@ class IconsServiceProvider extends ServiceProvider
     {
         $package
             ->setName(IconsConstants::getVendorPackage())
-            ->setPathFrom(source: $this, levelsUp: 2)
-            ->hasConfigFile('icon-sets-tabler');
+            ->setPathFrom(source: $this, levelsUp: 2);
     }
 
     public function bootingPackage(): void
