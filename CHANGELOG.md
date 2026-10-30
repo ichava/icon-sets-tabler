@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Changed
+
+- **The package author is Simtabi LLC, not a person.** `composer.json` named a personal maintainer and mailbox as author; it now names `Simtabi LLC` with the role address `ichava@simtabi.com` (no personal contact is published, decided 2026-10-28). `NoPersonalContactTest` reads `composer.json`, `README.md`, `LICENSE`, `docs/` and `src/`, fails on a personal name or address, and fails when it reads fewer files than it did when written.
+
 ## [0.1.1] - 2026-10-27
 
 ### Added
