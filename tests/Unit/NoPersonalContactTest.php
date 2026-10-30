@@ -7,7 +7,8 @@ declare(strict_types=1);
  *
  * The author is Simtabi LLC and the contact is the role address
  * ichava@simtabi.com. The guard reads composer.json, README.md, LICENSE and every
- * file under docs/ and src/, and fails on a personal name or mailbox. It also
+ * file under docs/, src/, .github/ and .dev/ (the workflows set the sync bot's commit
+ * identity, and .dev/ holds generated tooling output), and fails on a personal name or mailbox. It also
  * fails when it read fewer files than it did when written, so a path that stops
  * matching cannot pass by reading nothing.
  */
@@ -26,7 +27,7 @@ function personal_contact_files(): array
             $files[] = "{$root}/{$file}";
         }
     }
-    foreach (['docs', 'src'] as $dir) {
+    foreach (['docs', 'src', '.github', '.dev'] as $dir) {
         if (! is_dir("{$root}/{$dir}")) {
             continue;
         }
