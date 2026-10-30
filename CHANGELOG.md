@@ -7,6 +7,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 ### Added
 
 - **The pack declares its SVG kind.** `config.json` sets `package.kind` to `icon`, the kind ichava/core resolves for every category that names none of its own (core reads it from ichava/core#148; an older core ignores the key). `tests/Feature/SvgKindTest.php` fails on a kind core would not recognise, on a category that resolves none, and, against a core that has `IconRegistry::kindFor()`, on any category core resolves differently. `RetiredCopiesTest` also pins a non-empty description for every label core loads.
+- **`SiblingConstraintsTest` keeps every `ichava/*` constraint on the released line.** At release every ichava repository becomes one commit tagged `v0.1.0`, so 0.1.0 is the only version of any sibling. The test reads `require` and `require-dev` in `composer.json`, fails on any `ichava/*` constraint that 0.1.0 does not satisfy (checked with `composer/semver`, now a direct dev requirement), and fails when it finds no constraint to check.
 
 ### Changed
 
@@ -14,6 +15,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 - **PHPStan analyses at level `max`, up from 0.** `phpstan.neon.dist` now has icon-sets-bundled's shape: one counted, path-scoped ignore for the two `HasIconSetVariants` hooks PHPStan reports as unused because the trait calls them through `static::`, with `reportUnmatchedIgnoredErrors` failing the run if either stops occurring. No baseline, and no source change was needed. `PhpstanLevelTest` reads the config and fails if the level is anything but `max` or a baseline appears.
 - **`sync-upstream.yml` commits as the github-actions bot's noreply address** instead of a personal GitHub login, matching packs scaffolded since icon-sets-package-scaffolder#60 and icon-sets-sync's default. The personal-contact guard now also reads `.github/` and `.dev/`.
 - **The package author is Simtabi LLC, not a person.** `composer.json` named a personal maintainer and mailbox as author; it now names `Simtabi LLC` with the role address `ichava@simtabi.com` (no personal contact is published, decided 2026-10-28). `NoPersonalContactTest` reads `composer.json`, `README.md`, `LICENSE`, `docs/` and `src/`, fails on a personal name or address, and fails when it reads fewer files than it did when written.
+- **CI tests against `ichava/core`'s `main`.** Every job that installs dependencies first aliases core's `main` into the 0.1 line (`composer require "ichava/core:dev-main as 0.1.99" --no-update`), prints the commit it resolved, and restores `composer.json` after the install, so the committed constraint is unchanged and the tests read it. Against that core, `SvgKindTest`'s comparison with `IconRegistry::kindFor()` runs instead of skipping.
 
 ### Removed
 
