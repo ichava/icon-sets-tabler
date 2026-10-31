@@ -7,7 +7,7 @@
 #
 # A human reviews the PR diff and merges. release-please then opens the
 # release PR, and its tag starts release.yml, which publishes the GitHub
-# release. Nothing is published to Packagist; installs come from the tags.
+# release. Packagist reads the tag and lists the new version.
 #
 # Required:
 #   GITHUB_TOKEN (automatic) for PR creation.
