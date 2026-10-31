@@ -1,6 +1,6 @@
 {
     "name": "ichava/icon-sets-tabler",
-    "description": "5,900+ Tabler SVG icons for Laravel. Outline + filled variants, customisable stroke widths, MIT-licensed. Built on the Ichava ecosystem.",
+    "description": "6,238 Tabler SVG icons (5,184 outline, 1,054 filled) from tabler/tabler-icons, for Laravel 13 on the Ichava icon ecosystem.",
     "type": "library",
     "keywords": [
         "laravel",
@@ -16,7 +16,7 @@
     "authors": [
         {
             "name": "Simtabi LLC",
-            "email": "ichava@simtabi.com",
+            "email": "opensource@simtabi.com",
             "homepage": "https://simtabi.com",
             "role": "Developer"
         }
