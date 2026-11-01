@@ -80,6 +80,16 @@ commit those tags pointed at is on `main`, so no code was lost; their notes are 
 `CHANGELOG.md` under *Archived pre-reset history*. Version numbers in older changelog entries and
 issues refer to that earlier series.
 
+## Tags are final
+
+A pushed `vX.Y.Z` tag is never moved, deleted or reused: once a tag has been fetched, lockfiles and
+caches keep the commit it named while fresh installs resolve the moved one, so two consumers of the
+same version run different code (and for a Go module, `sum.golang.org` makes the moved version fail
+verification). Test a release with a pre-release tag (`vX.Y.Z-rc.N`), whose commit needs its own
+`## [X.Y.Z-rc.N]` CHANGELOG section and which publishes as a GitHub pre-release. Retract a bad
+release and fix it forward in the next version. The full rules are in
+[CONTRIBUTING.md](../CONTRIBUTING.md#releases-and-versioning).
+
 ---
 
 [← Docs index](../README.md#documentation)
