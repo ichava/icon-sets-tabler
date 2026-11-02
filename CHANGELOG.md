@@ -4,6 +4,12 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Fixed
+
+- The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
+  token is not allowed to create pull requests in this organisation, so the sync failed at its last
+  step after refreshing the assets.
+
 ## [0.1.0] - TBD
 
 First release of `ichava/icon-sets-tabler`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-27 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
