@@ -4,6 +4,12 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Changed
+
+- **Upstream assets refreshed to Tabler Icons 3.50.0** (from 3.49.0), from the weekly sync. New outline
+  icons are added, and Tabler's MIT licence now ships beside the assets in
+  `resources/assets/svg/licenses/tabler-icons/LICENSE`.
+
 ### Fixed
 
 - The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
