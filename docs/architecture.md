@@ -33,12 +33,12 @@ is the rule; a transitive dependency is not a contract.
 
 Its upstream is `@tabler/icons`, and the version these SVGs came from is recorded in
 `resources/assets/svg/config.json` under `upstream.current_version` rather than written out
-here, so the two cannot drift. Core's [check pack updates](https://opensource.simtabi.com/documentation/ichava/core/recipes/check-pack-updates)
+here, so the two cannot drift. Core's [check pack updates](https://github.com/ichava/core/blob/main/docs/recipes/check-pack-updates.md)
 recipe reports whether a newer release exists.
 
 ## See also
 
-- [Core architecture](https://opensource.simtabi.com/documentation/ichava/core/architecture) -- topology, boot order, the registry
+- [Core architecture](https://github.com/ichava/core/blob/main/docs/architecture.md) -- topology, boot order, the registry
 - [Attribution](attribution.md) -- the upstream project and its licence
 - [Release](release.md)
 
