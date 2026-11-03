@@ -11,7 +11,7 @@
         "tabler-icons",
         "ichava"
     ],
-    "homepage": "https://opensource.simtabi.com/products/ichava/icon-sets-tabler",
+    "homepage": "https://github.com/ichava/icon-sets-tabler",
     "license": "MIT",
     "authors": [
         {
@@ -96,6 +96,6 @@
         "source": "https://github.com/ichava/icon-sets-tabler",
         "issues": "https://github.com/ichava/icon-sets-tabler/issues",
         "security": "https://github.com/ichava/icon-sets-tabler/security/policy",
-        "docs": "https://opensource.simtabi.com/documentation/ichava/icon-sets-tabler/"
+        "docs": "https://github.com/ichava/icon-sets-tabler/tree/main/docs"
     }
 }

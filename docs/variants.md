@@ -8,7 +8,7 @@
 - **Outline** — `2px` stroke, transparent fill, `currentColor` stroke, `stroke-linecap="round"`, `stroke-linejoin="round"`
 - **Filled** — `currentColor` fill, no stroke
 
-Every SVG is 24×24 with `viewBox="0 0 24 24"`. Browse the full library at [tabler-icons.io](https://tabler-icons.io), or visually through the [`ichava/icon-browser`](https://opensource.simtabi.com/documentation/ichava/icon-browser/) SPA.
+Every SVG is 24×24 with `viewBox="0 0 24 24"`. Browse the full library at [tabler-icons.io](https://tabler-icons.io), or visually through the [`ichava/icon-browser`](https://github.com/ichava/icon-browser) SPA.
 Tabler ships two variants. The Ichava integration treats them as separate icon "categories" under the same package, addressed by sub-path.
 
 | Variant | Path prefix | Style |
@@ -52,7 +52,7 @@ Many icons exist in both variants; not all do. Check the [Tabler website](https:
 ## See also
 
 - [Customisation](customization.md), stroke width and colour
-- [Icon path format](https://opensource.simtabi.com/documentation/ichava/core/tools/icon-path-format)
+- [Icon path format](https://github.com/ichava/core/blob/main/docs/tools/icon-path-format.md)
 
 ---
 
