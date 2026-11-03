@@ -6,6 +6,7 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ### Changed
 
+- **The author and contact address is `ichava@simtabi.com`** (W-11, Sim 2026-11-03), replacing the community address `opensource@simtabi.com` wherever this repository named it. Vulnerability reports still go to `security@simtabi.com`. The test that guards the address expects `ichava@` now.
 - **Upstream assets refreshed to Tabler Icons 3.50.0** (from 3.49.0), from the weekly sync. New outline
   icons are added, and Tabler's MIT licence now ships beside the assets in
   `resources/assets/svg/licenses/tabler-icons/LICENSE`.
