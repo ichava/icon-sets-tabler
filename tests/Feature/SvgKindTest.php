@@ -111,3 +111,120 @@ it(description: 'resolves the same kinds through core', closure: function () {
         expect($registry->kindFor('ichava/icon-sets-tabler', $slug)->value)->toBe($kind);
     }
 });
+
+/**
+ * Up to $perCategory item paths from each first-level folder under files/, plus
+ * the files at its root: the paths core resolves a kind for (the path under
+ * `files/`, forward slashes, no `.svg`).
+ *
+ * @return list<string>
+ */
+function tabler_item_paths(int $perCategory = 5): array
+{
+    $root = dirname(__DIR__, 2) . '/resources/assets/svg/files';
+    $paths = [];
+
+    foreach (glob($root . '/*', GLOB_ONLYDIR) ?: [] as $directory) {
+        $taken = 0;
+
+        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS)) as $file) {
+            if ($file->getExtension() !== 'svg' || tabler_is_theme_twin($file->getBasename('.svg'))) {
+                continue;
+            }
+
+            $paths[] = substr(str_replace('\\', '/', $file->getPathname()), strlen($root) + 1, -strlen('.svg'));
+
+            if (++$taken >= $perCategory) {
+                break;
+            }
+        }
+    }
+
+    foreach (glob($root . '/*.svg') ?: [] as $file) {
+        $paths[] = basename($file, '.svg');
+    }
+
+    sort($paths);
+
+    return $paths;
+}
+
+/** A theme twin is not an item: it inherits its light file's kind. */
+function tabler_is_theme_twin(string $basename): bool
+{
+    return false;
+}
+
+/** @return array{string, string} the kind and the D6 row source an item resolves to */
+function tabler_expected(string $item): array
+{
+    // No item, rule or category kind: `package.kind` decides, so the source is `pack`.
+    return ['icon', 'pack'];
+}
+
+it(description: 'declares item kinds and kind rules core can read', closure: function () {
+    $data = tabler_kind_config()['metadata']['data'];
+    $files = dirname(__DIR__, 2) . '/resources/assets/svg/files';
+
+    // Absent is fine (a v0.1 manifest has neither). When present, `items` is a
+    // map keyed by item path and `kinds.rules` an ordered array: core drops an
+    // entry it cannot read and doctor reports it, so a typo would quietly fall
+    // through to the next row.
+    expect($data['items'] ?? [])->toBeArray();
+    expect(array_is_list($data['kinds']['rules'] ?? []))->toBeTrue('kinds.rules must be an ordered array');
+
+    foreach ($data['items'] ?? [] as $path => $item) {
+        expect(is_array($item) && in_array($item['kind'] ?? null, tabler_kinds(), true))
+            ->toBeTrue("items.{$path}.kind names no kind");
+        expect(is_file("{$files}/{$path}.svg"))->toBeTrue("items.{$path} names no file");
+    }
+
+    foreach ($data['kinds']['rules'] ?? [] as $index => $rule) {
+        $match = is_array($rule) ? ($rule['match'] ?? null) : null;
+
+        expect(is_string($match) && $match !== '' && $match[0] !== '/' && strpbrk($match, '[]{}\\') === false)
+            ->toBeTrue("kinds.rules.{$index}.match is not a valid glob");
+        expect(in_array($rule['kind'] ?? null, tabler_kinds(), true))
+            ->toBeTrue("kinds.rules.{$index}.kind names no kind");
+    }
+});
+
+it(description: 'declares no kind mixed, since a mixed pack is derived from its items', closure: function () {
+    $config = tabler_kind_config();
+    $declared = [$config['package']['kind'] ?? null];
+
+    foreach ($config['metadata']['data']['categories'] ?? [] as $category) {
+        $declared[] = is_array($category) ? ($category['kind'] ?? null) : null;
+    }
+
+    expect(in_array('mixed', $declared, true))->toBeFalse('there is no "mixed" kind');
+});
+
+it(description: 'resolves each item to the kind and row the pack intends through core', closure: function () {
+    if (! class_exists(Simtabi\Laranail\Ichava\Support\KindResolver::class)) {
+        $this->markTestSkipped(
+            'the ichava/core resolved here predates item kinds and rules (Support\KindResolver, ichava/core#162); '
+            . 'the config.json cases above still run',
+        );
+    }
+
+    $resolver = $this->app->make(Simtabi\Laranail\Ichava\Support\KindResolver::class);
+    $items = tabler_item_paths();
+
+    // A glob matching nothing would make the loop below vacuous.
+    expect(count($items))->toBeGreaterThanOrEqual(2, 'too few items were inspected');
+
+    $kinds = [];
+
+    foreach ($items as $item) {
+        $resolution = $resolver->resolve('ichava/icon-sets-tabler', $item);
+        [$kind, $source] = tabler_expected($item);
+
+        expect([$resolution->kind->value, $resolution->source->value])
+            ->toBe([$kind, $source], "{$item} resolved to {$resolution->kind->value} from {$resolution->source->value}");
+
+        $kinds[$resolution->kind->value] = true;
+    }
+
+    expect(array_keys($kinds))->toBe(['icon'], 'this pack is not mixed');
+});

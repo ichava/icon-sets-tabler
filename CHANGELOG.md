@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+### Added
+
+- **The pack's kind is pinned against core's resolver.** `tests/Feature/SvgKindTest.php` gains cases for the D6 kind keys core now reads (ichava/core#162): `metadata.data.items` and `metadata.data.kinds.rules`, when present, hold valid kinds and globs and name files that exist; no category or the pack declares a `mixed` kind; and, with a core that has `Support\KindResolver`, a sample of items from every folder resolves `icon` from `package.kind`. `config.json` is unchanged: `package.kind` was already `icon`. `docs/configuration.md` describes the kind keys.
+
 ### Changed
 
 - **Documentation links point at each repository's own `docs/`** (Sim, 2026-11-03: "all ichava repos have docs in their respective repos. thats by design"). Links to `opensource.simtabi.com/documentation/ichava/...` and the `opensource.simtabi.com/products/ichava/...` homepage, which answer 404 for every ichava page, now go to the matching `docs/*.md` on GitHub, or to the repository itself. Each target was checked to exist on that repository's `main`. The manifest's `homepage` and `support.docs` follow.
