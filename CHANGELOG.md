@@ -24,6 +24,10 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
   token is not allowed to create pull requests in this organisation, so the sync failed at its last
   step after refreshing the assets.
 
+### Security
+
+- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
+
 ## [0.1.0] - TBD
 
 First release of `ichava/icon-sets-tabler`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-27 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
