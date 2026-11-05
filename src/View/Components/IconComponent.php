@@ -22,13 +22,4 @@ class IconComponent extends BaseIconComponent
     {
         return IconsConstants::getVendorPackage();
     }
-
-    protected function getDefaultAttributes(): array
-    {
-        return [
-            'stroke-width'    => '2',
-            'stroke-linecap'  => 'round',
-            'stroke-linejoin' => 'round',
-        ];
-    }
 }

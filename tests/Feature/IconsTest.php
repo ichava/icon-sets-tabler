@@ -38,3 +38,13 @@ it(description: 'picks up the package in the icon registry', closure: function (
         'IconRegistry should have ichava/icon-sets-tabler registered after boot.',
     );
 });
+
+it(description: 'ships the icon count its README and composer.json state', closure: function () {
+    $root = dirname(__DIR__, 2);
+    $count = static fn (string $variant): int => count(glob("{$root}/resources/assets/svg/files/{$variant}/*.svg") ?: []);
+
+    expect($count('outline'))->toBe(5203)
+        ->and($count('filled'))->toBe(1054)
+        ->and((string) file_get_contents("{$root}/README.md"))->toContain('6,257 SVGs')
+        ->and((string) json_decode((string) file_get_contents("{$root}/composer.json"), true)['description'])->toContain('6,257');
+});

@@ -70,7 +70,10 @@
     "defaults": {
       "class": "w-6 h-6",
       "stroke_width": 2,
-      "attributes": {}
+      "attributes": {
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+      }
     }
   },
   "upstream": {

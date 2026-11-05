@@ -5,7 +5,7 @@
 [![Static analysis](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml/badge.svg)](https://github.com/ichava/icon-sets-tabler/actions/workflows/code-quality.yml)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> Tabler icons for the Ichava Laravel icon ecosystem: 6,238 SVGs across `outline` (5,184) and `filled` (1,054), vendored from `@tabler/icons`.
+> Tabler icons for the Ichava Laravel icon ecosystem: 6,257 SVGs across `outline` (5,203) and `filled` (1,054), vendored from `@tabler/icons`.
 
 Requires [`ichava/core`](https://github.com/ichava/core) `^0.1` on PHP `^8.4.1 || ^8.5` and Laravel `^13`.
 
