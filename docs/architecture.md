@@ -4,7 +4,7 @@
 
 ## What it ships
 
-6,202 SVGs, addressed by variants -- see [Variants](variants.md). Counted from
+6,257 SVGs, addressed by variants -- see [Variants](variants.md). Counted from
 the tracked files rather than quoted from prose:
 
 ```bash
