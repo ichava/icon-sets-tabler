@@ -1,6 +1,6 @@
 {
     "name": "ichava/icon-sets-tabler",
-    "description": "6,257 Tabler SVG icons (5,203 outline, 1,054 filled) from tabler/tabler-icons, for Laravel 13 on the Ichava icon ecosystem.",
+    "description": "6,287 Tabler SVG icons (5,233 outline, 1,054 filled) from tabler/tabler-icons, for Laravel 13 on the Ichava icon ecosystem.",
     "type": "ichava-icon-set",
     "keywords": [
         "laravel",
