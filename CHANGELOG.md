@@ -4,9 +4,16 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-13
+
+First release of `ichava/icon-sets-tabler`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-27 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
+
 ### Added
 
 - **The pack's kind is pinned against core's resolver.** `tests/Feature/SvgKindTest.php` gains cases for the D6 kind keys core now reads (ichava/core#162): `metadata.data.items` and `metadata.data.kinds.rules`, when present, hold valid kinds and globs and name files that exist; no category or the pack declares a `mixed` kind; and, with a core that has `Support\KindResolver`, a sample of items from every folder resolves `icon` from `package.kind`. `config.json` is unchanged: `package.kind` was already `icon`. `docs/configuration.md` describes the kind keys.
+
+- **The pack declares its SVG kind.** `config.json` sets `package.kind` to `icon`, the kind ichava/core resolves for every category that names none of its own (core reads it from ichava/core#148; an older core ignores the key). `tests/Feature/SvgKindTest.php` fails on a kind core would not recognise, on a category that resolves none, and, against a core that has `IconRegistry::kindFor()`, on any category core resolves differently. `RetiredCopiesTest` also pins a non-empty description for every label core loads.
+- **`SiblingConstraintsTest` keeps every `ichava/*` constraint on the released line.** At release every ichava repository becomes one commit tagged `v0.1.0`, so 0.1.0 is the only version of any sibling. The test reads `require` and `require-dev` in `composer.json`, fails on any `ichava/*` constraint that 0.1.0 does not satisfy (checked with `composer/semver`, now a direct dev requirement), and fails when it finds no constraint to check.
 
 ### Changed
 
@@ -19,27 +26,6 @@ All notable changes to `ichava/icon-sets-tabler` follow [Keep a Changelog](https
 - **Upstream assets refreshed to Tabler Icons 3.50.0** (from 3.49.0), from the weekly sync. New outline
   icons are added, and Tabler's MIT licence now ships beside the assets in
   `resources/assets/svg/licenses/tabler-icons/LICENSE`.
-
-### Fixed
-
-- The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
-  token is not allowed to create pull requests in this organisation, so the sync failed at its last
-  step after refreshing the assets.
-
-### Security
-
-- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
-
-## [0.1.0] - 2026-11-13
-
-First release of `ichava/icon-sets-tabler`. The repository is published as a single commit; the 0.1.x tags cut between 2026-10-23 and 2026-10-27 (v0.1.0 to v0.1.1) are folded into this release, and their notes are kept below under *Archived history*.
-
-### Added
-
-- **The pack declares its SVG kind.** `config.json` sets `package.kind` to `icon`, the kind ichava/core resolves for every category that names none of its own (core reads it from ichava/core#148; an older core ignores the key). `tests/Feature/SvgKindTest.php` fails on a kind core would not recognise, on a category that resolves none, and, against a core that has `IconRegistry::kindFor()`, on any category core resolves differently. `RetiredCopiesTest` also pins a non-empty description for every label core loads.
-- **`SiblingConstraintsTest` keeps every `ichava/*` constraint on the released line.** At release every ichava repository becomes one commit tagged `v0.1.0`, so 0.1.0 is the only version of any sibling. The test reads `require` and `require-dev` in `composer.json`, fails on any `ichava/*` constraint that 0.1.0 does not satisfy (checked with `composer/semver`, now a direct dev requirement), and fails when it finds no constraint to check.
-
-### Changed
 
 - **Every workflow runs on every pull request.** The `paths-ignore: '**.md'` and `paths:` filters are removed from the `pull_request` triggers, so every check reports on every pull request and can be a required status check on `main`. A path-filtered required check never reports on the pull requests it skips, and blocks them for good.
 - **PHPStan analyses at level `max`, up from 0.** `phpstan.neon.dist` now has icon-sets-bundled's shape: one counted, path-scoped ignore for the two `HasIconSetVariants` hooks PHPStan reports as unused because the trait calls them through `static::`, with `reportUnmatchedIgnoredErrors` failing the run if either stops occurring. No baseline, and no source change was needed. `PhpstanLevelTest` reads the config and fails if the level is anything but `max` or a baseline appears.
@@ -56,6 +42,16 @@ First release of `ichava/icon-sets-tabler`. The repository is published as a sin
 
 - **The `commands` and `info` translation groups.** They were written for an update command and an about block this pack does not ship (core's about section reads the registry), and nothing loaded them. `tests/Feature/RetiredCopiesTest.php` keeps them out.
 - **`config/icon-sets-tabler.php`, its `hasConfigFile()` registration and its publish tag.** The file held only `set.name` and `set.prefix`, copies of what core reads from `config.json` through `IconsConstants`, and nothing read them; with both gone it was empty, so it is deleted rather than kept. `ichava.icon-sets-tabler` is no longer set. `docs/configuration.md` and `docs/installation.md` say so.
+
+### Fixed
+
+- The weekly upstream sync opens its pull request with a Refresh Bot token. GitHub Actions' own
+  token is not allowed to create pull requests in this organisation, so the sync failed at its last
+  step after refreshing the assets.
+
+### Security
+
+- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
 
 ## [Archived history]
 
